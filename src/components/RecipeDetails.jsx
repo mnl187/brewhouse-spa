@@ -6,20 +6,26 @@ export const RecipeDetails = () => {
 
     const {id} = useParams();
     const [recipe, setRecipe] = useState(null);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
-        const fetchRecipe = async (id) => {
+        const fetchRecipe = async () => {
             try {
                 const response = await fetch(`/api/recipes/${id}`);
                 const data = await response.json();
                 setRecipe(data);
-            } catch (error) {
-                console.error(error);
+            } catch (err) {
+                setError(true);
             }
         };
 
         fetchRecipe();
     }, [id]);
+
+    if (error) {
+        return <div>Nie udało się pobrać danych</div>
+    }
+
 
     if (!recipe) {
         return <div>Wczytywanie...</div>;
