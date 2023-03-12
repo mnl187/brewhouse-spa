@@ -5,7 +5,14 @@ import {Box, Flex, Heading, Button} from '@chakra-ui/react';
 export const Header = () => {
     return (
         <Box bg="gray.100" px="4">
-            <Flex justifyContent="space-between" alignItems="center">
+            <Flex as="nav"
+                  align="center"
+                  justify="space-between"
+                  wrap="wrap"
+                  padding={{ base: "1rem", md: "2rem" }}
+                  bg="gray.800"
+                  color="white"
+            >
                 <Heading as="h1" size="md">
                     Przepisy piwowarskie
                 </Heading>
