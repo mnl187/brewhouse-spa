@@ -5,6 +5,7 @@ import {ChakraProvider} from "@chakra-ui/react";
 import {Header} from "./components/Header";
 import {Recipe} from "./components/Recipe";
 import {NotFound} from "./components/NotFound";
+import {RecipeDetails} from "./components/RecipeDetails";
 
 export const App = () => {
     return (
@@ -13,8 +14,9 @@ export const App = () => {
                 <Header/>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/recipes" element={<Recipe/>}/>
-                    <Route path="/*" element={<NotFound/>}/>
+                    <Route path="/recipe" element={<Recipe/>}/>
+                    <Route path="/recipe/{id}" element={<RecipeDetails/>}/>
+                    <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Router>
         </ChakraProvider>
