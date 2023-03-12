@@ -1,14 +1,18 @@
 import './App.css';
-import {Header} from "./components/Header";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Home} from "./components/Home";
+import {ChakraProvider} from "@chakra-ui/react";
+import {Header} from "./components/Header";
 
 export const App = () => {
-  return (
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
-  );
+    return (
+        <ChakraProvider>
+            <Router>
+                <Header/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                </Routes>
+            </Router>
+        </ChakraProvider>
+    );
 }

@@ -4,9 +4,9 @@ import { Heading, Stack, Button } from '@chakra-ui/react';
 export const Home = () => {
     return (
         <Stack spacing={4} align="center">
-            <Heading>Welcome to the Beer Recipe App</Heading>
+            <Heading>Witam w Brewhouse, apliakacji piwowarskiej</Heading>
             <Link to="/recipe/1">
-                <Button>View Recipe</Button>
+                <Button>Recepta</Button>
             </Link>
         </Stack>
     );

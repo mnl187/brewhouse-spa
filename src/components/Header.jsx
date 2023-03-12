@@ -7,7 +7,7 @@ export const Header = () => {
         <Box bg="gray.100" px="4">
             <Flex justifyContent="space-between" alignItems="center">
                 <Heading as="h1" size="md">
-                    Moje przepisy piwowarskie
+                    Przepisy piwowarskie
                 </Heading>
                 <Box>
                     <Link to="/">
