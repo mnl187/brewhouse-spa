@@ -1,15 +1,18 @@
 import React, {useState} from 'react';
 import {Box, Button, FormControl, FormLabel, Heading, Input} from "@chakra-ui/react";
+import {useNavigate} from "react-router-dom";
 
 export const RecipeForm = ({ onSubmit }) => {
 
+    const navigate = useNavigate ();
     const [name, setName] = useState();
     const [description, setDescription] = useState();
     const [ingredients, setIngredients] = useState();
     const [directions, setDirections] = useState();
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({name, description, ingredients, directions})
+        onSubmit({name, description, ingredients, directions});
+        navigate('/');
     }
 
     return (
