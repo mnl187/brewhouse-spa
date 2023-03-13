@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box, FormControl, FormLabel, Heading, Input} from "@chakra-ui/react";
+import {Box, Button, FormControl, FormLabel, Heading, Input} from "@chakra-ui/react";
 
 export const RecipeForm = ({ onSubmit }) => {
 
@@ -13,7 +13,7 @@ export const RecipeForm = ({ onSubmit }) => {
     }
 
     return (
-        <Box axW="600px" mx="auto" mt="8">
+        <Box maxW="600px" mx="auto" mt="8">
             <Heading as="h2" size="lg" mb="4">
                 Dodaj nowy przepis
             </Heading>
@@ -34,7 +34,9 @@ export const RecipeForm = ({ onSubmit }) => {
                     <FormLabel htmlFor="directions">Instrukcje</FormLabel>
                     <Input w="25vw" type="text" id="directions" value={directions} onChange={(e) => setDirections(e.target.value)}/>
                 </FormControl>
-
+                <Button type="submit" colorScheme="teal" mt="4">
+                    Dodaj przepis
+                </Button>
             </form>
 
         </Box>
