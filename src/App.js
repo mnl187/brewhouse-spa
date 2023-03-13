@@ -6,6 +6,7 @@ import {Header} from "./components/Header";
 import {Recipe} from "./components/Recipe";
 import {NotFound} from "./components/NotFound";
 import {RecipeDetails} from "./components/RecipeDetails";
+import {RecipeForm} from "./components/RecipeForm";
 
 export const App = () => {
     return (
@@ -16,6 +17,7 @@ export const App = () => {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/recipe" element={<Recipe/>}/>
                     <Route path="/recipe/{id}" element={<RecipeDetails/>}/>
+                    <Route path="/recipeform" element={<RecipeForm/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Router>
