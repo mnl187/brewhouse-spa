@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 export const EditRecipeForm = (recipe, onUpdate) => {
@@ -20,4 +20,11 @@ export const EditRecipeForm = (recipe, onUpdate) => {
         });
         navigate(`/recipes/${recipe.id}`);
     };
+
+    useEffect(() => {
+        setName(recipe.name);
+        setDirections(recipe.description);
+        setIngredients(recipe.ingredients);
+        setDirections(recipe.directions);
+    }, [recipe])
 };
