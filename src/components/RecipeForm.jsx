@@ -24,15 +24,15 @@ export const RecipeForm = ({ onSubmit }) => {
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="description">Opis</FormLabel>
-                    <Input w="25vw" type="text" id="description" value={name} onChange={(e) => setDescription(e.target.value)}/>
+                    <Input w="25vw" type="text" id="description" value={description} onChange={(e) => setDescription(e.target.value)}/>
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="ingredients">Składniki</FormLabel>
-                    <Input w="25vw" type="text" id="ingredients" value={name} onChange={(e) => setIngredients(e.target.value)}/>
+                    <Input w="25vw" type="text" id="ingredients" value={ingredients} onChange={(e) => setIngredients(e.target.value)}/>
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="directions">Instrukcje</FormLabel>
-                    <Input w="25vw" type="text" id="directions" value={name} onChange={(e) => setDirections(e.target.value)}/>
+                    <Input w="25vw" type="text" id="directions" value={directions} onChange={(e) => setDirections(e.target.value)}/>
                 </FormControl>
 
             </form>
