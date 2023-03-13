@@ -34,7 +34,7 @@ export const RecipeForm = ({ onSubmit }) => {
                     <Input w="25vw" type="text" id="ingredients" value="ingredients" onChange={(e) => setIngredients(e.target.value)}/>
                 </FormControl>
                 <FormControl mb="4">
-                    <FormLabel htmlFor="directions">Instrukcje</FormLabel>
+                    <FormLabel htmlFor="directions">Sposób przygotowania</FormLabel>
                     <Input w="25vw" type="text" id="directions" value="directions" onChange={(e) => setDirections(e.target.value)}/>
                 </FormControl>
                 <Button type="submit" colorScheme="teal" mt="4">
