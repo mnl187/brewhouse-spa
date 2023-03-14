@@ -51,7 +51,7 @@ export const EditRecipeForm = (recipe, onUpdate) => {
                 <Button type="submit" colorScheme="teal" mr="4">
                     Zapisz
                 </Button>
-                <Button onClick={() => navigate.goBack()}>Anuluj</Button>
+                <Button onClick={() => navigate(-1)}>Anuluj</Button>
             </form>
         </Box>
     )
