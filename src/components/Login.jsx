@@ -32,12 +32,12 @@ export const Login = (onLogin) => {
                 <FormControl mb="4">
                     <FormLabel htmlFor="username">Nazwa użytkownika</FormLabel>
                     <Input w="25vw" type="text" id="username" value={username}
-                           onChange={(e) => setUsername(e.target.value)}></Input>
+                           onChange={(e) => setUsername(e.target.value)} required/>
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="password">Hasło</FormLabel>
                     <Input w="25vw" type="text" id="password" value={password}
-                           onChange={(e) => setPassword(e.target.value)}></Input>
+                           onChange={(e) => setPassword(e.target.value)} required/>
                 </FormControl>
 
                 {error && <Box color="red">{error}</Box>}
