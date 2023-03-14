@@ -20,23 +20,31 @@ export const Login = (onLogin) => {
         }
     };
 
+    const handleCancel = () => {
+        setEmail('');
+        setPassword('');
+        setError(null);
+    }
+
     return (
-        <Box maxW="600px" mx="auto"  py="8">
+        <Box maxW="600px" mx="auto" py="8">
             <form onSubmit={handeSubmit}>
                 <FormControl mb="4">
                     <FormLabel htmlFor="username">Nazwa użytkownika</FormLabel>
-                    <Input w="25vw" type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)}></Input>
+                    <Input w="25vw" type="text" id="username" value={username}
+                           onChange={(e) => setUsername(e.target.value)}></Input>
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="password">Hasło</FormLabel>
-                    <Input w="25vw" type="text" id="password" value={password} onChange={(e) => setPassword(e.target.value)}></Input>
+                    <Input w="25vw" type="text" id="password" value={password}
+                           onChange={(e) => setPassword(e.target.value)}></Input>
                 </FormControl>
 
-                (error && <Box color="red">{error}</Box>)
+                {error && <Box color="red">{error}</Box>}
 
                 <Button type="submit" colorScheme="teal" mr="4">Zaloguj</Button>
-                <Button type="button" onClick={}>Anuluj</Button>
+                <Button type="button" onClick={handleCancel}>Anuluj</Button>
             </form>
         </Box>
-    )
-}
+    );
+};
