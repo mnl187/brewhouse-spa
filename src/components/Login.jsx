@@ -13,17 +13,17 @@ export const Login = () => {
     }
 
     return (
-        <Box>
+        <Box maxW="600px" mx="auto"  py="8">
             <form onSubmit={handeSubmit}>
-                <FormControl>
+                <FormControl mb="4">
                     <FormLabel htmlFor="username">Nazwa użytkownika</FormLabel>
-                    <Input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)}></Input>
+                    <Input w="25vw" type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)}></Input>
                 </FormControl>
-                <FormControl>
+                <FormControl mb="4">
                     <FormLabel htmlFor="password">Hasło</FormLabel>
-                    <Input type="text" id="password" value={password} onChange={(e) => setPassword(e.target.value)}></Input>
+                    <Input w="25vw" type="text" id="password" value={password} onChange={(e) => setPassword(e.target.value)}></Input>
                 </FormControl>
-                <Button type="submit">Zaloguj</Button>
+                <Button type="submit" colorScheme="teal" mr="4">Zaloguj</Button>
                 <Button onClick={() => navigate("/")}>Anuluj</Button>
             </form>
         </Box>
