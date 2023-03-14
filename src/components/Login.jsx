@@ -6,17 +6,19 @@ export const Login = (onLogin) => {
     const navigate = useNavigate()
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("");
+    const [error, setError] = useState(null);
 
     const handeSubmit = (e) => {
         e.preventDefault();
+        // walidacja do przerobienia jak powstanie backend
         if (email === 'user@site.com' && password === 'password') {
             onLogin(email);
             navigate("/");
         } else {
-            setError()
+            setError('Niepoprawny email lub hasło');
         }
-    }
+    };
 
     return (
         <Box maxW="600px" mx="auto"  py="8">
