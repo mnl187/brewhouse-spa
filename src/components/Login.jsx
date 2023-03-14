@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 export const Login = () => {
     const navigate = useNavigate()
     const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
     const handeSubmit = (e) => {
         e.preventDefault();
@@ -17,6 +18,10 @@ export const Login = () => {
                 <FormControl>
                     <FormLabel htmlFor="username">Nazwa użytkownika</FormLabel>
                     <Input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)}></Input>
+                </FormControl>
+                <FormControl>
+                    <FormLabel htmlFor="password">Hasło</FormLabel>
+                    <Input type="text" id="password" value={password} onChange={(e) => setPassword(e.target.value)}></Input>
                 </FormControl>
                 <Button type="submit">Zaloguj</Button>
                 <Button onClick={() => navigate("/")}>Anuluj</Button>
