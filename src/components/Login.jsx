@@ -31,8 +31,11 @@ export const Login = (onLogin) => {
                     <FormLabel htmlFor="password">Hasło</FormLabel>
                     <Input w="25vw" type="text" id="password" value={password} onChange={(e) => setPassword(e.target.value)}></Input>
                 </FormControl>
+
+                (error && <Box color="red">{error}</Box>)
+
                 <Button type="submit" colorScheme="teal" mr="4">Zaloguj</Button>
-                <Button onClick={() => navigate("/")}>Anuluj</Button>
+                <Button type="button" onClick={}>Anuluj</Button>
             </form>
         </Box>
     )
