@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Box, Button, FormControl, FormLabel, Input} from "@chakra-ui/react";
 import {useNavigate} from "react-router-dom";
 
-export const Login = (onLogin) => {
+export const Login = ({setLoggedIn}) => {
     const navigate = useNavigate()
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -12,7 +12,7 @@ export const Login = (onLogin) => {
         e.preventDefault();
         // walidacja do przerobienia jak powstanie backend
         if (username === 'username' && password === 'password') {
-            onLogin(username);
+            setLoggedIn(true);
             navigate("/");
         } else {
             setError('Niepoprawny email lub hasło');
