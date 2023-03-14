@@ -2,14 +2,20 @@ import React, {useState} from "react";
 import {Box, Button, FormControl, FormLabel, Input} from "@chakra-ui/react";
 import {useNavigate} from "react-router-dom";
 
-export const Login = () => {
+export const Login = (onLogin) => {
     const navigate = useNavigate()
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("")
 
     const handeSubmit = (e) => {
         e.preventDefault();
-        navigate("/");
+        if (email === 'user@site.com' && password === 'password') {
+            onLogin(email);
+            navigate("/");
+        } else {
+            setError()
+        }
     }
 
     return (
