@@ -1,6 +1,6 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import {Home} from "../pages/Home";
+import {Home} from "./pages/Home";
 import {ChakraProvider} from "@chakra-ui/react";
 import {Header} from "./pages/Header";
 import {Recipe} from "./pages/Recipe";
