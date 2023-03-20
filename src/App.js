@@ -11,6 +11,7 @@ import {EditRecipeForm} from "./components/EditRecipeForm";
 import {DeleteRecipe} from "./components/DeleteRecipe";
 import {Login} from "./components/Login";
 import {useState} from "react";
+import {ViewBeerStyles} from "./components/ViewBeerStyles";
 
 export const App = () => {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -23,9 +24,10 @@ export const App = () => {
                     <Route path="/" element={loggedIn ? <Home/> : <Login setLoggedIn={setLoggedIn}/>} />
                     <Route path="/recipe" element={<Recipe/>}/>
                     <Route path="/recipe/{id}" element={<RecipeDetails/>}/>
+                    <Route path="/add-recipe" element={<AddRecipe/>}/>
                     <Route path="/recipe/:id/edit" element={<EditRecipeForm />}/>
                     <Route path="/recipes/:id/delete" element={<DeleteRecipe/>}/>
-                    <Route path="/add-recipe" element={<AddRecipe/>}/>
+                    <Route path="/view-beer-styles" element={<ViewBeerStyles/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Router>
