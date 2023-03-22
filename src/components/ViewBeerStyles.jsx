@@ -7,7 +7,7 @@ export const ViewBeerStyles = () => {
     const [searchTerm, setSearchTerm] = useState("")
 
     useEffect(() => {
-        fetch('/data/beerStyles.json')   // TODO: później zmienić na endopint z backendu
+        fetch('http://localhost:5000/beer-styles')   // TODO: później zmienić na endopint z backendu
             .then((response) => response.json())
             .then((data) => setBeerStyles(data))
     }, []);
