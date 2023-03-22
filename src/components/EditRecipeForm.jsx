@@ -4,9 +4,9 @@ import {Box, Button, FormControl, FormLabel, Input} from "@chakra-ui/react";
 
 export const EditRecipeForm = (recipe, onUpdate) => {
     const [name, setName] = useState(recipe.name);
-    const [description, setDescription] = useState(recipe.description);
+    const [style, setStyle] = useState(recipe.description);
     const [ingredients, setIngredients] = useState(recipe.ingredients);
-    const [directions, setDirections] = useState(recipe.directions);
+    const [instructions, setInstructions] = useState(recipe.instructions);
 
     const navigate = useNavigate();
 
@@ -15,18 +15,18 @@ export const EditRecipeForm = (recipe, onUpdate) => {
         onUpdate({
             id: recipe.id,
             name,
-            description,
+            style,
             ingredients,
-            directions,
+            instructions,
         });
         navigate(`/recipes/${recipe.id}`);
     };
 
     useEffect(() => {
         setName(recipe.name);
-        setDirections(recipe.description);
+        setStyle(recipe.style);
         setIngredients(recipe.ingredients);
-        setDirections(recipe.directions);
+        setInstructions(recipe.instructions);
     }, [recipe])
 
     return (
@@ -37,16 +37,16 @@ export const EditRecipeForm = (recipe, onUpdate) => {
                     <Input w="25vw" type="text" id="name" value="name" onChange={(e) => setName(e.target.value)}/>
                 </FormControl>
                 <FormControl mb="4">
-                    <FormLabel htmlFor="description">Opis</FormLabel>
-                    <Input w="25vw" type="text" id="description" value="description" onChange={(e) => setDescription(e.target.value)}/>
+                    <FormLabel htmlFor="style">Styl</FormLabel>
+                    <Input w="25vw" type="text" id="style" value="style" onChange={(e) => setStyle(e.target.value)}/>
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="ingredients">Składniki</FormLabel>
                     <Input w="25vw" type="text" id="ingredients" value="ingredients" onChange={(e) => setIngredients(e.target.value)}/>
                 </FormControl>
                 <FormControl mb="4">
-                    <FormLabel htmlFor="directions">Sposób przygotowania</FormLabel>
-                    <Input w="25vw" type="text" id="directions" value="directions" onChange={(e) => setDirections(e.target.value)}/>
+                    <FormLabel htmlFor="instructions">Sposób przygotowania</FormLabel>
+                    <Input w="25vw" type="text" id="instructions" value="instructions" onChange={(e) => setInstructions(e.target.value)}/>
                 </FormControl>
                 <Button type="submit" colorScheme="teal" mr="4">
                     Zapisz
