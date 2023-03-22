@@ -6,12 +6,12 @@ export const RecipeForm = ({ onSubmit }) => {
 
     const navigate = useNavigate ();
     const [name, setName] = useState();
-    const [description, setDescription] = useState();
+    const [style, setStyle] = useState();
     const [ingredients, setIngredients] = useState();
-    const [directions, setDirections] = useState();
+    const [instructions, setInstructions] = useState();
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({name, description, ingredients, directions});
+        onSubmit({name, style, ingredients, instructions});
         navigate('/');
     }
 
@@ -23,27 +23,24 @@ export const RecipeForm = ({ onSubmit }) => {
             <form onSubmit={handleSubmit}>
                 <FormControl mb="4">
                     <FormLabel htmlFor="name">Nazwa</FormLabel>
-                    <Input w="25vw" type="text" id="name" value="name" onChange={(e) => setName(e.target.value)}/>
+                    <Input w="25vw" type="text" id="name" onChange={(e) => setName(e.target.value)}/>
                 </FormControl>
                 <FormControl mb="4">
-                    <FormLabel htmlFor="description">Opis</FormLabel>
-                    <Input w="25vw" type="text" id="description" value="description" onChange={(e) => setDescription(e.target.value)}/>
+                    <FormLabel htmlFor="description">Styl</FormLabel>
+                    <Input w="25vw" type="text" id="description" onChange={(e) => setStyle(e.target.value)}/>
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="ingredients">Składniki</FormLabel>
-                    <Input w="25vw" type="text" id="ingredients" value="ingredients" onChange={(e) => setIngredients(e.target.value)}/>
+                    <Input w="25vw" type="text" id="ingredients" onChange={(e) => setIngredients(e.target.value)}/>
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="directions">Sposób przygotowania</FormLabel>
-                    <Input w="25vw" type="text" id="directions" value="directions" onChange={(e) => setDirections(e.target.value)}/>
+                    <Input w="25vw" type="text" id="directions" onChange={(e) => setInstructions(e.target.value)}/>
                 </FormControl>
                 <Button type="submit" colorScheme="teal" mt="4">
                     Dodaj przepis
                 </Button>
             </form>
-
         </Box>
-
     )
-
 }
