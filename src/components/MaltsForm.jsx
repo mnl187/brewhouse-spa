@@ -1,10 +1,10 @@
 import React from "react";
 import {IngredientForm} from "../pages/IngredientForm";
-import {Button, VStack} from "@chakra-ui/react";
+import {Box, Button} from "@chakra-ui/react";
 
 export const MaltsForm = ({malts, setMalts}) => {
     return (
-        <VStack>
+        <Box>
             <IngredientForm
             label="Słód"
             ingredients={malts}
@@ -23,6 +23,6 @@ export const MaltsForm = ({malts, setMalts}) => {
             <Button onClick={() => setMalts([...malts, { name: '', amount: '' }])}>
                 Dodaj słód
             </Button>
-        </VStack>
+        </Box>
     )
 }

@@ -33,6 +33,7 @@ export const IngredientForm = ({ingredients, setIngredients, index, label}) => {
             <FormControl>
                 <FormLabel>Ilość [g]</FormLabel>
                 <Input
+                    w="7vw"
                     type="number"
                     placeholder="Ilość w gramach"
                     value={ingredients[index]?.amount || ''}

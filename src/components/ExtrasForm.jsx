@@ -1,10 +1,10 @@
 import React from "react";
 import {IngredientForm} from "../pages/IngredientForm";
-import {Button, VStack} from "@chakra-ui/react";
+import {Box, Button} from "@chakra-ui/react";
 
 export const ExtrasForm = ({extras, setExtras}) => {
     return (
-        <VStack>
+        <Box>
             <IngredientForm
                 label="Dodatki"
                 ingredients={extras}
@@ -23,6 +23,6 @@ export const ExtrasForm = ({extras, setExtras}) => {
             <Button onClick={() => setExtras([...extras, { name: '', amount: '' }])}>
                 Dodaj dodatki
             </Button>
-        </VStack>
+        </Box>
     )
 }

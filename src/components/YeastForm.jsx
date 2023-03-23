@@ -1,10 +1,10 @@
 import React from "react";
 import {IngredientForm} from "../pages/IngredientForm";
-import {Button, VStack} from "@chakra-ui/react";
+import {Box, Button} from "@chakra-ui/react";
 
 export const YeastForm = ({yeast, setYeast}) => {
     return (
-        <VStack>
+        <Box>
             <IngredientForm
                 label="Drożdże"
                 ingredients={yeast}
@@ -23,6 +23,6 @@ export const YeastForm = ({yeast, setYeast}) => {
             <Button onClick={() => setYeast([...yeast, { name: '', amount: '' }])}>
                 Dodaj drożdze
             </Button>
-        </VStack>
+        </Box>
     )
 }
