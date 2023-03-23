@@ -25,6 +25,7 @@ export const IngredientForm = ({ingredients, setIngredients, index, label}) => {
             <FormControl>
                 <FormLabel>{label}</FormLabel>
                 <Input
+                    w="17.5vw"
                     placeholder="Nazwa składnika"
                     value={ingredients[index]?.name || ''}
                     onChange={handleIngredientChange}
@@ -35,7 +36,7 @@ export const IngredientForm = ({ingredients, setIngredients, index, label}) => {
                 <Input
                     w="7vw"
                     type="number"
-                    placeholder="Ilość w gramach"
+                    placeholder="Ile gram"
                     value={ingredients[index]?.amount || ''}
                     onChange={handleAmountChange}
                 />

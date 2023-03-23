@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Box, Button, Flex, FormControl, FormLabel, Heading, Input, Select} from "@chakra-ui/react";
+import {Box, Button, FormControl, FormLabel, Heading, Input, Select} from "@chakra-ui/react";
 import {useNavigate} from "react-router-dom";
 import {MaltsForm} from '../components/MaltsForm';
 import {HopsForm} from '../components/HopsForm';
@@ -63,18 +63,12 @@ export const RecipeForm = ({onSubmit}) => {
                     <FormLabel htmlFor="name">Nazwa</FormLabel>
                     <Input w="25vw" type="text" id="name" onChange={(e) => setName(e.target.value)}/>
                 </FormControl>
-                {/*<FormControl mb="4">*/}
-                {/*    <FormLabel htmlFor="style">Styl</FormLabel>*/}
-                {/*    <Input w="25vw" type="text" id="style" onChange={(e) => setStyle(e.target.value)}/>*/}
-                {/*</FormControl>*/}
                 <FormControl mb="4">
                     <FormLabel>Składniki</FormLabel>
-                    {/*<Flex direction="column">*/}
                         <MaltsForm malts={malts} setMalts={setMalts}/>
                         <HopsForm hops={hops} setHops={setHops}/>
                         <YeastForm yeast={yeast} setYeast={setYeast}/>
                         <ExtrasForm extras={extras} setExtras={setExtras}/>
-                    {/*</Flex>*/}
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="instructions">Sposób przygotowania</FormLabel>

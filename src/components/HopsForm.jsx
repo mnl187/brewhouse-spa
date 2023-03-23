@@ -20,7 +20,7 @@ export const HopsForm = ({hops, setHops}) => {
                     index={index + 1}
                 />
             ))}
-            <Button onClick={() => setHops([...hops, { name: '', amount: '' }])}>
+            <Button mt={4} mb={4} onClick={() => setHops([...hops, { name: '', amount: '' }])}>
                 Dodaj chmiel
             </Button>
         </Box>

@@ -20,9 +20,10 @@ export const MaltsForm = ({malts, setMalts}) => {
                 index={index + 1}
                 />
             ))}
-            <Button onClick={() => setMalts([...malts, { name: '', amount: '' }])}>
-                Dodaj słód
-            </Button>
-        </Box>
+                <Button mt={4} mb={4} onClick={() => setMalts([...malts, { name: '', amount: '' }])}>
+                    Dodaj słód
+                </Button>
+            </Box>
+
     )
 }
