@@ -1,8 +1,17 @@
 import React from 'react';
 import {FormControl, FormLabel, HStack, Input} from "@chakra-ui/react";
 
-const IngredientForm = (ingredients, setIngredients, index) => {
+export const IngredientForm = (ingredients, setIngredients, index, label) => {
     const handleIngredientChange = (e) => {
+        const updatedIngredients = [...ingredients];
+        updatedIngredients[index] = {
+            ...updatedIngredients[index],
+            name: e.target.value,
+        };
+        setIngredients(updatedIngredients);
+    };
+
+    const handleAmountChange = (e) => {
         const updatedIngredients = [...ingredients];
         updatedIngredients[index] = {
             ...updatedIngredients[index],
@@ -14,15 +23,21 @@ const IngredientForm = (ingredients, setIngredients, index) => {
     return (
         <HStack>
             <FormControl>
-                <FormLabel>
+                <FormLabel>{label}</FormLabel>
                     <Input
                         placeholder="Nazwa składnika"
                         value={ingredients[index]?.name || ''}
                         onChange={handleIngredientChange}
-                    >
-
-                    </Input>
-                </FormLabel>
+                    />
+            </FormControl>
+            <FormControl>
+                <FormLabel>Ilość [g]</FormLabel>
+                <Input
+                type="number"
+                placeholder="Ilość w gramach"
+                value={ingredients[index]?.amount || ''}
+                onChange={handleAmountChange}
+                />
             </FormControl>
         </HStack>
     )
