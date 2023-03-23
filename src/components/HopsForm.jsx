@@ -2,7 +2,7 @@ import React from "react";
 import {IngredientForm} from "../pages/IngredientForm";
 import {Button, VStack} from "@chakra-ui/react";
 
-export const ChopsForm = ({hops, setHops}) => {
+export const HopsForm = ({hops, setHops}) => {
     return (
         <VStack>
             <IngredientForm
