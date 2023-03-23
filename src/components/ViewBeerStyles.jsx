@@ -30,9 +30,9 @@ export const ViewBeerStyles = () => {
                 mb={4}
 
             />
-                <Grid>
+                <Grid  templateColumns="repeat(auto-fill, minmax(250px, 1fr))" gap={6}>
                     {filteredBeerStyles.map((style) => (
-                        <GridItem key={style.name}>
+                        <GridItem key={style.name} p={4} borderWidth={1} borderRadius="lg">
                             <Text>
                                 Nazwa stylu piwnego: <strong>{style.name}</strong>
                             </Text>
