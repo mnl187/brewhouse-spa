@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Input} from "@chakra-ui/react";
+import {Grid, GridItem, Text} from '@chakra-ui/react'
 
 export const ViewBeerStyles = () => {
 
@@ -29,16 +30,18 @@ export const ViewBeerStyles = () => {
                 mb={4}
 
             />
-            <ul>
-                {filteredBeerStyles.map((style) => (
-                    <li key={style.name}>
-                        Nazwa stylu piwnego: <strong>{style.name}</strong><br/>
-                        Kategoria: <strong>{style.category}</strong><br/>
-                        <br/>
-                    </li>
-                ))}
-
-            </ul>
+                <Grid>
+                    {filteredBeerStyles.map((style) => (
+                        <GridItem key={style.name}>
+                            <Text>
+                                Nazwa stylu piwnego: <strong>{style.name}</strong>
+                            </Text>
+                            <Text>
+                                Kategoria: <strong>{style.category}</strong>
+                            </Text>
+                        </GridItem>
+                    ))}
+                </Grid>
         </div>
 
     )
