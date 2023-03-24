@@ -1,16 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Grid, GridItem, Heading, Text} from '@chakra-ui/react';
-import {SearchBar} from '../components/SearchBar';
+import {SearchBar} from './SearchBar';
 
 
 export const RecipesList = () => {
     const [recipes, setRecipes] = useState([]);
+    const [searchText, setSearchText] = useState('');
 
     useEffect(() => {
         fetch('http://localhost:5000/beers')
             .then((response) => response.json())
             .then((data) => setRecipes(data));
     }, []);
+
+    const filteredRecipes = recipes.filter((recipe) =>
+        (recipe.name && recipe.name.toLowerCase().includes(searchText.toLowerCase())) ||
+        (recipe.selectedStyle && recipe.selectedStyle.toLowerCase().includes(searchText.toLowerCase()))
+    );
 
     return (
         <Box>
