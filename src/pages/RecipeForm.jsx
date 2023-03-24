@@ -22,7 +22,7 @@ export const RecipeForm = ({onSubmit}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         onSubmit({
-            name, selectedStyle, malts, hops, yeast, extras, instructions
+            name, selectedStyle, malts, hops, yeast, extras,  instructions
         });
         navigate('/');
     }
