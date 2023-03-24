@@ -21,6 +21,12 @@ export const RecipesList = () => {
                         <Heading>
                             {recipe.name} - {recipe.selectedStyle}
                         </Heading>
+                        <Text fontWeight="bold">Słody:</Text>
+                        {recipe.malts.map((malt, index) => (
+                            <Text key={index}>
+                                {malt.name}: {malt.amount} g
+                            </Text>
+                        ))}
                     </GridItem>
                 ))}
 
