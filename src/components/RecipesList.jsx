@@ -27,6 +27,25 @@ export const RecipesList = () => {
                                 {malt.name}: {malt.amount} g
                             </Text>
                         ))}
+                        <Text fontWeight="bold">Chmiele:</Text>
+                        {recipe.hops.map((hop, index) => (
+                            <Text key={index}>
+                                {hop.name}: {hop.amount} g
+                            </Text>
+                        ))}
+                        <Text fontWeight="bold">Drożdże:</Text>
+                        {recipe.yeast.map((yeast, index) => (
+                            <Text key={index}>
+                                {yeast.name}: {yeast.amount} g
+                            </Text>
+                        ))}
+                        <Text fontWeight="bold">Dodatkowe składniki:</Text>
+                        {recipe.extras.map((extra, index) => (
+                            <Text key={index}>
+                                {extra.name}: {extra.amount} g
+                            </Text>
+                        ))}
+
                     </GridItem>
                 ))}
 
