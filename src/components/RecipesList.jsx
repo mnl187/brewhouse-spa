@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Grid, GridItem, Heading, Text} from '@chakra-ui/react';
 
-export const Recipes = () => {
+export const RecipesList = () => {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
@@ -11,14 +11,16 @@ export const Recipes = () => {
     }, []);
 
     return (
-        <Box maxW="600px" mx="auto" mt="8">
+        <Box>
             <Heading as="h2" size="lg" mb="4">
                 Twoje przepisy
             </Heading>
             <Grid>
-                {recipes.map(recipe => (
-                    <GridItem key={recipe_id}>
-
+                {recipes.map((recipe) => (
+                    <GridItem key={recipe._id}>
+                        <Heading>
+                            {recipe.name} - {recipe.selectedStyle}
+                        </Heading>
                     </GridItem>
                 ))}
 
