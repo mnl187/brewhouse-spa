@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Brewhouse
+Aplikacja Piwowarska
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-## Available Scripts
+## Opis
 
-In the project directory, you can run:
+Brewhouse to aplikacja piwowarska, która pomaga tworzyć i zarządzać przepisami na piwo. Umożliwia użytkownikom dodawanie składników, ustalanie stylu piwa oraz przechowywanie wszystkich informacji w jednym miejscu.
 
-### `npm start`
+# Funkcje
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Tworzenie i edycja przepisów na piwo
+- Zarządzanie składnikami, takimi jak słód, chmiel, drożdże i dodatki
+- Wyszukiwanie przepisów po stylu lub nazwie
+- Usuwanie przepisów
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Wymagania
 
-### `npm test`
+- Node.js 18.x
+- MongoDB 6.x
+- React 18.x
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalacja
 
-### `npm run build`
+1. Sklonuj repozytorium na lokalnym komputerze:
+```bash
+ git clone https://github.com/mnl187/brewhouse-spa.git
+ ```
+2. Zainstaluj zależności:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+   cd brewhouse-spa
+   npm install
+```
+3. Uruchom serwer:
+```bash
+   npm start
+```
+4. Otwórz przeglądarkę i przejdź do http://localhost:3000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Zaloguj się używając poniższych danych
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Nazwa użytkownika:
+```bash
+username
+```
+- Hasło
+```bash
+password
+```
 
-### `npm run eject`
+## Licencja
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ten projekt jest objęty licencją MIT. Więcej informacji można znaleźć w pliku [LICENSE](LICENSE).
