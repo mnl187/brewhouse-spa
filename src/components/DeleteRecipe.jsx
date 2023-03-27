@@ -2,10 +2,10 @@ import {Heading, VStack, Text, Button} from "@chakra-ui/react";
 import React from "react";
 import {useNavigate} from "react-router-dom";
 
-export const DeleteRecipe = (recipe, onDelete) => {
+export const DeleteRecipe = ({recipe, onDelete}) => {
     const navigate = useNavigate();
     const handleDelete = () => {
-        onDelete(recipe.id);
+        onDelete(recipe._id);
         navigate('/')
     }
 
