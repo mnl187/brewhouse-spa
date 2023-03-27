@@ -36,17 +36,8 @@ export const RecipesList = () => {
                 Twoje przepisy
             </Heading>
             <SearchBar searchText={searchText} setSearchText={setSearchText}/>
-            <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-                {filteredRecipes.map((recipe) => (
-                    <GridItem key={recipe._id}>
-                        <Heading>
-                            {recipe.name} - {recipe.selectedStyle}
-                        </Heading>
-                    </GridItem>
-                ))}
-            </Grid>
             <Grid templateColumns="repeat(auto-fill, minmax(300px, 1fr))" gap={6}>
-                {recipes.map((recipe) => (
+                {filteredRecipes.map((recipe) => (
                     <GridItem key={recipe._id} borderWidth={1} borderRadius="lg" p={4}>
                         <Heading as="h3" size="md" mb={3}>
                             {recipe.name} - {recipe.selectedStyle}
@@ -78,8 +69,7 @@ export const RecipesList = () => {
                         <DeleteRecipe recipe={recipe} onDelete={deleteRecipeFromDatabase}/>
                     </GridItem>
                 ))}
-
             </Grid>
         </Box>
-    );
-};
+    )
+}
