@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {Box, Grid, GridItem, Heading, Text} from '@chakra-ui/react';
 import {SearchBar} from './SearchBar';
 import {DeleteRecipeButton} from "./DeleteRecipeButton";
+import {EditRecipeButton} from "./EditRecipeButton";
+
 
 
 export const RecipesList = () => {
@@ -18,6 +20,28 @@ export const RecipesList = () => {
         (recipe.name && recipe.name.toLowerCase().includes(searchText.toLowerCase())) ||
         (recipe.selectedStyle && recipe.selectedStyle.toLowerCase().includes(searchText.toLowerCase()))
     );
+
+    const updateRecipeInDatabase = async (recipeId, updatedRecipe) => {
+        try {
+            const response = await fetch(
+                `http://localhost:5000/beers/${recipeId}`,
+                {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(updatedRecipe),
+                }
+            );
+            if (response.status === 200) {
+                console.log("Przepis został zaktualizowany");
+            } else {
+                console.error("Nie udało się zaktualizować przepisu");
+            }
+        } catch (error) {
+            console.error("Wystąpił błąd podczas aktualizacji przepisu:", error);
+        }
+    };
 
     const deleteRecipeFromDatabase = async (recipeId) => {
         try {
@@ -66,6 +90,7 @@ export const RecipesList = () => {
                                 {extra.name}: {extra.amount} g
                             </Text>
                         ))}
+                        <EditRecipeButton recipe={recipe} onUpdate={updateRecipeInDatabase} />
                         <DeleteRecipeButton recipe={recipe} onDelete={deleteRecipeFromDatabase}/>
                     </GridItem>
                 ))}

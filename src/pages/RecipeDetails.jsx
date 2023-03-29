@@ -1,5 +1,5 @@
 import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Container, Heading, Text} from "@chakra-ui/react";
 
 export const RecipeDetails = () => {
