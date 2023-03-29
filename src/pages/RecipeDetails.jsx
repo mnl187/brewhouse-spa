@@ -11,7 +11,7 @@ export const RecipeDetails = () => {
     useEffect(() => {
         const fetchRecipe = async () => {
             try {
-                const response = await fetch(`/api/recipes/${id}`);
+                const response = await fetch(`/recipes/${id}`);
                 const data = await response.json();
                 setRecipe(data);
             } catch (err) {
