@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Grid, GridItem, Heading, Text} from '@chakra-ui/react';
 import {SearchBar} from './SearchBar';
-import {DeleteRecipe} from "./DeleteRecipe";
+import {DeleteRecipeButton} from "./DeleteRecipeButton";
 
 
 export const RecipesList = () => {
@@ -66,7 +66,7 @@ export const RecipesList = () => {
                                 {extra.name}: {extra.amount} g
                             </Text>
                         ))}
-                        <DeleteRecipe recipe={recipe} onDelete={deleteRecipeFromDatabase}/>
+                        <DeleteRecipeButton recipe={recipe} onDelete={deleteRecipeFromDatabase}/>
                     </GridItem>
                 ))}
             </Grid>

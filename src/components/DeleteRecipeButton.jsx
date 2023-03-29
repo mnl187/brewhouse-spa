@@ -1,8 +1,7 @@
 import {VStack, Button} from "@chakra-ui/react";
 import React from "react";
 
-
-export const DeleteRecipe = ({recipe, onDelete}) => {
+export const DeleteRecipeButton = ({recipe, onDelete}) => {
     const handleDelete = () => {
         onDelete(recipe._id);
     }

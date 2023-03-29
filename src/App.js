@@ -8,7 +8,7 @@ import {NotFound} from "./pages/NotFound";
 import {RecipeDetails} from "./pages/RecipeDetails";
 import {AddRecipe} from "./pages/AddRecipe";
 import {EditRecipeForm} from "./components/EditRecipeForm";
-import {DeleteRecipe} from "./components/DeleteRecipe";
+import {DeleteRecipeButton} from "./components/DeleteRecipeButton";
 import {Login} from "./components/Login";
 import {useState} from "react";
 import {ViewBeerStyles} from "./components/ViewBeerStyles";
@@ -26,7 +26,7 @@ export const App = () => {
                     <Route path="/recipe/{id}" element={<RecipeDetails/>}/>
                     <Route path="/add-recipe" element={<AddRecipe/>}/>
                     <Route path="/recipe/:id/edit" element={<EditRecipeForm />}/>
-                    <Route path="/recipes/:id/delete" element={<DeleteRecipe/>}/>
+                    <Route path="/recipes/:id/delete" element={<DeleteRecipeButton/>}/>
                     <Route path="/view-beer-styles" element={<ViewBeerStyles/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
