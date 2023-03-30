@@ -46,6 +46,18 @@ export const EditRecipeForm = ({ onUpdate }) => {
                     <Input
                         w="25vw"
                         type="text"
+                        id="selectedStyle"
+                        name="selectedStyle"
+                        value={recipe.selectedStyle}
+                        isReadOnly
+                        bg="gray.100"
+                    />
+                </FormControl>
+                <FormControl mb="4">
+                    <FormLabel htmlFor="name">Nazwa</FormLabel>
+                    <Input
+                        w="25vw"
+                        type="text"
                         id="name"
                         name="name"
                         value={recipe.name}
