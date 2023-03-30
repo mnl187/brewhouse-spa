@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import { Box, Button, FormControl, FormLabel, Input, Heading } from "@chakra-ui/react";
 
 export const EditRecipeForm = ({ onUpdate }) => {
     const [recipe, setRecipe] = useState(null);
@@ -39,10 +39,13 @@ export const EditRecipeForm = ({ onUpdate }) => {
     };
 
     return (
-        <Box>
+        <Box maxW="600px" mx="auto" mt="8">
+            <Heading as="h2" size="lg" mb="4">
+                Edytuj przepis
+            </Heading>
             <form onSubmit={handleSubmit}>
                 <FormControl mb="4">
-                    <FormLabel htmlFor="name">Nazwa</FormLabel>
+                    <FormLabel htmlFor="name">Styl piwny</FormLabel>
                     <Input
                         w="25vw"
                         type="text"
