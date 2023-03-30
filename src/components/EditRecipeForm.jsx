@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {Box, Button, FormControl, FormLabel, Input, Heading} from "@chakra-ui/react";
+import {IngredientInputs} from "./IngredientInputs";
+
+
 
 export const EditRecipeForm = ({onUpdate}) => {
     const [recipe, setRecipe] = useState(null);
@@ -59,6 +62,12 @@ export const EditRecipeForm = ({onUpdate}) => {
         const {name, value} = e.target;
         setRecipe((prevState) => ({...prevState, [name]: value}));
     };
+
+    const IngredientInputs = () => {
+        return (
+            <IngredientInputs/>
+        )
+    }
 
     return (
         <Box maxW="600px" mx="auto" mt="8">
