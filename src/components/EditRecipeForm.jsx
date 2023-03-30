@@ -52,7 +52,51 @@ export const EditRecipeForm = ({ onUpdate }) => {
                         onChange={handleChange}
                     />
                 </FormControl>
-                {/* Dodaj więcej kontrolek formularza dla pozostałych właściwości przepisu */}
+                <FormControl mb="4">
+                    <FormLabel htmlFor="name">Słód</FormLabel>
+                    <Input
+                        w="25vw"
+                        type="text"
+                        id="malts"
+                        name="malts"
+                        value={recipe.malts}
+                        onChange={handleChange}
+                    />
+                </FormControl>
+                <FormControl mb="4">
+                    <FormLabel htmlFor="name">Chmiel</FormLabel>
+                    <Input
+                        w="25vw"
+                        type="text"
+                        id="hops"
+                        name="hops"
+                        value={recipe.hops}
+                        onChange={handleChange}
+                    />
+                </FormControl>
+                <FormControl mb="4">
+                    <FormLabel htmlFor="name">Drożdże</FormLabel>
+                    <Input
+                        w="25vw"
+                        type="text"
+                        id="yeast"
+                        name="yeast"
+                        value={recipe.yeast}
+                        onChange={handleChange}
+                    />
+                </FormControl>
+                <FormControl mb="4">
+                    <FormLabel htmlFor="name">Dodatki</FormLabel>
+                    <Input
+                        w="25vw"
+                        type="text"
+                        id="yeast"
+                        name="v"
+                        value={recipe.yeast}
+                        onChange={handleChange}
+                    />
+                </FormControl>
+
                 <Button type="submit" colorScheme="teal" mr="4">
                     Zapisz
                 </Button>
@@ -60,17 +104,4 @@ export const EditRecipeForm = ({ onUpdate }) => {
             </form>
         </Box>
     );
-};
-
-                // <FormControl mb="4">
-                //     <FormLabel htmlFor="style">Styl</FormLabel>
-                //     <Input w="25vw" type="text" id="style" value="style" onChange={(e) => setStyle(e.target.value)}/>
-                // </FormControl>
-                // <FormControl mb="4">
-                //     <FormLabel htmlFor="ingredients">Składniki</FormLabel>
-                //     <Input w="25vw" type="text" id="ingredients" value="ingredients" onChange={(e) => setIngredients(e.target.value)}/>
-                // </FormControl>
-                // <FormControl mb="4">
-                //     <FormLabel htmlFor="instructions">Sposób przygotowania</FormLabel>
-                //     <Input w="25vw" type="text" id="instructions" value="instructions" onChange={(e) => setInstructions(e.target.value)}/>
-                // </FormControl>
+}
