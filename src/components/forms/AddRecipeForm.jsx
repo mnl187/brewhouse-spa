@@ -39,7 +39,7 @@ export const RecipeForm = ({onSubmit}) => {
     }, []);
 
     return (
-        <Box maxW="600px" mx="auto" mt="8">
+        <Box maxW="600px" mx="auto" pt="8">
             <Heading as="h2" size="lg" mb="4">
                 Dodaj nowy przepis
             </Heading>

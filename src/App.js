@@ -12,20 +12,21 @@ import {ViewBeerStyles} from "./components/ViewBeerStyles";
 import brewhouseBackground from "./assets/images/brewhouse1.jpg";
 
 const containerStyle = {
-    backgroundImage: `url(${brewhouseBackground})`,
+    backgroundImage: `linear-gradient(rgba(225, 225, 225, 0.93), rgba(225, 225, 225, 0.95)), url(${brewhouseBackground})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     minHeight: "100vh",
 };
+
 export const App = () => {
     const [loggedIn, setLoggedIn] = useState(false);
 
     return (
-        <Box style={containerStyle}>
-            <ChakraProvider>
-                <Router>
-                    <Header/>
+        <ChakraProvider>
+            <Router>
+                <Header/>
+                <Box style={containerStyle}>
                     <Routes>
                         <Route path="/" element={loggedIn ? <Home/> : <Login setLoggedIn={setLoggedIn}/>}/>
                         <Route path="/recipe/:id/edit" element={<EditRecipeForm/>}/>
@@ -34,9 +35,8 @@ export const App = () => {
                         <Route path="/view-beer-styles" element={<ViewBeerStyles/>}/>
                         <Route path="*" element={<NotFound/>}/>
                     </Routes>
-                </Router>
-            </ChakraProvider>
-        </Box>
-
+                </Box>
+            </Router>
+        </ChakraProvider>
     );
 }
