@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {Box, Grid, GridItem, Heading, Text} from '@chakra-ui/react';
-import {SearchBar} from '../components/SearchBar';
-import {DeleteRecipeButton} from "../components/buttons/DeleteRecipeButton";
-import {EditRecipeButton} from "../components/buttons/EditRecipeButton";
+import React, { useEffect, useState } from 'react';
+import { Box, Flex, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import { SearchBar } from '../components/SearchBar';
+import { DeleteRecipeButton } from "../components/buttons/DeleteRecipeButton";
+import { EditRecipeButton } from "../components/buttons/EditRecipeButton";
 
 export const RecipesList = () => {
     const [recipes, setRecipes] = useState([]);
@@ -54,13 +54,13 @@ export const RecipesList = () => {
 
     return (
         <Box>
-            <Heading as="h2" size="lg" mb="4">
+            <Heading as="h2" size="lg" m="4" align="center" >
                 Twoje przepisy
             </Heading>
             <SearchBar searchText={searchText} setSearchText={setSearchText}/>
-            <Grid templateColumns="repeat(auto-fill, minmax(300px, 1fr))" gap={6}>
+            <Grid templateColumns="repeat(4, 1fr)" gap={6}>
                 {filteredRecipes.map((recipe) => (
-                    <GridItem key={recipe._id} borderWidth={1} borderRadius="lg" p={4}>
+                    <GridItem key={recipe._id} borderWidth={1} borderRadius="lg" p={4} bg="gray.100">
                         <Heading as="h3" size="md" mb={3}>
                             {recipe.name} - {recipe.selectedStyle}
                         </Heading>
@@ -88,8 +88,10 @@ export const RecipesList = () => {
                                 {extra.name}: {extra.amount} g
                             </Text>
                         ))}
-                        <EditRecipeButton recipe={recipe} onUpdate={updateRecipeInDatabase} />
-                        <DeleteRecipeButton recipe={recipe} onDelete={deleteRecipeFromDatabase}/>
+                        <Flex justifyContent="space-between" alignItems="center" mt="4">
+                            <EditRecipeButton recipe={recipe} onUpdate={updateRecipeInDatabase}/>
+                            <DeleteRecipeButton recipe={recipe} onDelete={deleteRecipeFromDatabase}/>
+                        </Flex>
                     </GridItem>
                 ))}
             </Grid>

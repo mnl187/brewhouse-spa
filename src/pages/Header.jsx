@@ -1,6 +1,6 @@
 import React from "react";
-import {Link} from 'react-router-dom';
-import {Box, Flex, Heading, Button, Text} from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import { Box, Flex, Heading, Button, Text } from '@chakra-ui/react';
 
 export const Header = () => {
     const Divider = () => (

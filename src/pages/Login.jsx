@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-import {Box, Button, FormControl, FormLabel, Input} from "@chakra-ui/react";
-import {useNavigate} from "react-router-dom";
+import React, { useState } from "react";
+import { Box, Button, FormControl, FormLabel, Heading, Input, VStack } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 export const Login = ({setLoggedIn}) => {
     const navigate = useNavigate()
@@ -26,6 +26,8 @@ export const Login = ({setLoggedIn}) => {
     }
 
     return (
+        <VStack>
+        <Heading>Witam w Brewhouse, aplikacji piwowarskiej.</Heading>
         <Box maxW="600px" mx="auto" py="8">
             <form onSubmit={handeSubmit}>
                 <FormControl mb="4">
@@ -45,5 +47,6 @@ export const Login = ({setLoggedIn}) => {
                 <Button type="button" onClick={handleCancel}>Anuluj</Button>
             </form>
         </Box>
+        </VStack>
     );
 };
