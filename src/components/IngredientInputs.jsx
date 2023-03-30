@@ -3,7 +3,7 @@ import {VStack, Input} from "@chakra-ui/react";
 
 export const IngredientInputs = ({ingredient, keyName, index, onIngredientChange}) => {
     return (
-        <VStack key={ingredient._id}>
+        <VStack key={ingredient._id} align="start" spacing={2}>
             <Input
                 w="25vw"
                 type="text"

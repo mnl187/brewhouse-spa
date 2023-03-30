@@ -6,7 +6,7 @@ export const Home = () => {
     return (
         <Stack spacing={4} align="center">
             <Heading>Witam w Brewhouse, aplikacji piwowarskiej</Heading>
-            <RecipesList /> {/* Wyświetl listę przepisów */}
+            <RecipesList />
             <Link to="/add-recipe">
                 <Button>Dodaj przepis</Button>
             </Link>

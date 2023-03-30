@@ -2,9 +2,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Home} from "./pages/Home";
 import {ChakraProvider} from "@chakra-ui/react";
 import {Header} from "./pages/Header";
-import {Recipe} from "./pages/Recipe";
 import {NotFound} from "./pages/NotFound";
-import {RecipeDetails} from "./pages/RecipeDetails";
 import {AddRecipe} from "./components/AddRecipe";
 import {EditRecipeForm} from "./components/forms/EditRecipeForm";
 import {DeleteRecipeButton} from "./components/buttons/DeleteRecipeButton";
@@ -21,8 +19,6 @@ export const App = () => {
                 <Header/>
                 <Routes>
                     <Route path="/" element={loggedIn ? <Home/> : <Login setLoggedIn={setLoggedIn}/>}/>
-                    <Route path="/recipe" element={<Recipe/>}/>
-                    <Route path="/recipe/:id" element={<RecipeDetails/>}/>
                     <Route path="/recipe/:id/edit" element={<EditRecipeForm/>}/>
                     <Route path="/recipe/:id/delete" element={<DeleteRecipeButton/>}/>
                     <Route path="/add-recipe" element={<AddRecipe/>}/>

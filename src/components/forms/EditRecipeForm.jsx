@@ -112,6 +112,7 @@ export const EditRecipeForm = ({onUpdate}) => {
                         onChange={handleChange}
                     />
                 </FormControl>
+                <FormLabel>Składniki</FormLabel>
                 <FormControl mb="4">
                     <FormLabel htmlFor="malts">Słód</FormLabel>
                     {renderIngredients("malts")}
