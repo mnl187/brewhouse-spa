@@ -63,11 +63,25 @@ export const EditRecipeForm = ({onUpdate}) => {
         setRecipe((prevState) => ({...prevState, [name]: value}));
     };
 
-    const IngredientInputs = () => {
-        return (
-            <IngredientInputs/>
-        )
-    }
+    const handleIngredientChange = (index, key, field, value) => {
+        setRecipe((prevState) => {
+            const ingredients = prevState[key].slice();
+            ingredients[index] = { ...ingredients[index], [field]: value };
+            return { ...prevState, [key]: ingredients };
+        });
+    };
+
+    const IngredientInputs = (key) => {
+        return recipe[key].map((ingredient, index) =>  (
+            <IngredientInputs
+                key={ingredient._id}
+                ingredient={ingredient}
+                index={index}
+                keyName={key}
+                onIngredientChange={handleIngredientChange}
+            />
+        ));
+    };
 
     return (
         <Box maxW="600px" mx="auto" mt="8">
