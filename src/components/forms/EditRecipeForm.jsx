@@ -129,21 +129,7 @@ export const EditRecipeForm = ({onUpdate}) => {
                     <FormLabel htmlFor="extras">Dodatki</FormLabel>
                     {renderIngredients("extras")}
                 </FormControl>
-                <FormControl mb="4">
-                    <FormLabel htmlFor="extras">Dodatki</FormLabel>
-                    <Input
-                        w="25vw"
-                        type="text"
-                        id="extras"
-                        name="extras"
-                        value={recipe.extras}
-                        onChange={handleChange}
-                    />
-                </FormControl>
-
-                <Button type="submit" colorScheme="teal" mr="4">
-                    Zapisz
-                </Button>
+                <Button type="submit" colorScheme="teal" mr="4">Zapisz</Button>
                 <Button onClick={() => navigate(-1)}>Anuluj</Button>
             </form>
         </Box>
