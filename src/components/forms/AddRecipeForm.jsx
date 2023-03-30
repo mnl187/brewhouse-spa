@@ -59,7 +59,7 @@ export const RecipeForm = ({onSubmit}) => {
                         ))}
                     </Select>
                 </FormControl>
-                <FormControl mb="4">
+                <FormControl mb="4" isRequired>
                     <FormLabel htmlFor="name">Nazwa</FormLabel>
                     <Input w="25vw" type="text" id="name" onChange={(e) => setName(e.target.value)}/>
                 </FormControl>
