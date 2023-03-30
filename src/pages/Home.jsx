@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Heading, Stack, Button } from '@chakra-ui/react';
-import {RecipesList} from '../components/RecipesList';
+import {RecipesList} from './RecipesList';
 
 export const Home = () => {
     return (

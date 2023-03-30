@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {Box, Button, FormControl, FormLabel, Input, Heading} from "@chakra-ui/react";
-import {IngredientInputs} from "./IngredientInputs";
+import {IngredientInputs} from "../IngredientInputs";
 
 
 
@@ -71,7 +71,7 @@ export const EditRecipeForm = ({onUpdate}) => {
         });
     };
 
-    const IngredientInputs = (key) => {
+    const renderIngredients = (key) => {
         return recipe[key].map((ingredient, index) =>  (
             <IngredientInputs
                 key={ingredient._id}
@@ -114,36 +114,19 @@ export const EditRecipeForm = ({onUpdate}) => {
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="malts">Słód</FormLabel>
-                    <Input
-                        w="25vw"
-                        type="text"
-                        id="malts"
-                        name="malts"
-                        value={recipe.malts}
-                        onChange={handleChange}
-                    />
+                    {renderIngredients("malts")}
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="hops">Chmiel</FormLabel>
-                    <Input
-                        w="25vw"
-                        type="text"
-                        id="hops"
-                        name="hops"
-                        value={recipe.hops}
-                        onChange={handleChange}
-                    />
+                    {renderIngredients("hops")}
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="yeast">Drożdże</FormLabel>
-                    <Input
-                        w="25vw"
-                        type="text"
-                        id="yeast"
-                        name="yeast"
-                        value={recipe.yeast}
-                        onChange={handleChange}
-                    />
+                    {renderIngredients("yeast")}
+                </FormControl>
+                <FormControl mb="4">
+                    <FormLabel htmlFor="extras">Dodatki</FormLabel>
+                    {renderIngredients("extras")}
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="extras">Dodatki</FormLabel>

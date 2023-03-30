@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Grid, GridItem, Heading, Text} from '@chakra-ui/react';
-import {SearchBar} from './SearchBar';
-import {DeleteRecipeButton} from "./DeleteRecipeButton";
-import {EditRecipeButton} from "./EditRecipeButton";
-
-
+import {SearchBar} from '../components/SearchBar';
+import {DeleteRecipeButton} from "../components/buttons/DeleteRecipeButton";
+import {EditRecipeButton} from "../components/buttons/EditRecipeButton";
 
 export const RecipesList = () => {
     const [recipes, setRecipes] = useState([]);

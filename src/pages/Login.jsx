@@ -10,7 +10,7 @@ export const Login = ({setLoggedIn}) => {
 
     const handeSubmit = (e) => {
         e.preventDefault();
-        // walidacja do przerobienia jak powstanie backend
+
         if (username === 'username' && password === 'password') {
             setLoggedIn(true);
             navigate("/");

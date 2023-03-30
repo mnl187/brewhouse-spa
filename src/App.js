@@ -5,10 +5,10 @@ import {Header} from "./pages/Header";
 import {Recipe} from "./pages/Recipe";
 import {NotFound} from "./pages/NotFound";
 import {RecipeDetails} from "./pages/RecipeDetails";
-import {AddRecipe} from "./pages/AddRecipe";
-import {EditRecipeForm} from "./components/EditRecipeForm";
-import {DeleteRecipeButton} from "./components/DeleteRecipeButton";
-import {Login} from "./components/Login";
+import {AddRecipe} from "./components/AddRecipe";
+import {EditRecipeForm} from "./components/forms/EditRecipeForm";
+import {DeleteRecipeButton} from "./components/buttons/DeleteRecipeButton";
+import {Login} from "./pages/Login";
 import {useState} from "react";
 import {ViewBeerStyles} from "./components/ViewBeerStyles";
 

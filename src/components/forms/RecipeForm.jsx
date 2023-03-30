@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Button, FormControl, FormLabel, Heading, Input, Select} from "@chakra-ui/react";
 import {useNavigate} from "react-router-dom";
-import {MaltsForm} from '../components/MaltsForm';
-import {HopsForm} from '../components/HopsForm';
-import {YeastForm} from '../components/YeastForm';
-import {ExtrasForm} from '../components/ExtrasForm';
+import {MaltsForm} from './MaltsForm';
+import {HopsForm} from './HopsForm';
+import {YeastForm} from './YeastForm';
+import {ExtrasForm} from './ExtrasForm';
 
 export const RecipeForm = ({onSubmit}) => {
 
