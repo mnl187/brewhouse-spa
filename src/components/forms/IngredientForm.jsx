@@ -23,7 +23,7 @@ export const IngredientForm = ({ingredients, setIngredients, index, label}) => {
     return (
         <HStack>
             <FormControl>
-                <FormLabel>{label}</FormLabel>
+                {index === 0 && <FormLabel>{label}</FormLabel>}
                 <Input
                     w="17.5vw"
                     placeholder="Nazwa składnika"
@@ -32,7 +32,7 @@ export const IngredientForm = ({ingredients, setIngredients, index, label}) => {
                 />
             </FormControl>
             <FormControl>
-                <FormLabel>Ilość [g]</FormLabel>
+                {index === 0 && <FormLabel>Ilość [g]</FormLabel>}
                 <Input
                     w="7vw"
                     type="number"

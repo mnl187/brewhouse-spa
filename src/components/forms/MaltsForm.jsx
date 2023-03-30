@@ -1,5 +1,5 @@
 import React from "react";
-import {IngredientForm} from "../pages/IngredientForm";
+import {IngredientForm} from "./IngredientForm";
 import {Box, Button} from "@chakra-ui/react";
 
 export const MaltsForm = ({malts, setMalts}) => {

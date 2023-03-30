@@ -1,5 +1,5 @@
 import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Container, Heading, Text} from "@chakra-ui/react";
 
 export const RecipeDetails = () => {
@@ -11,7 +11,7 @@ export const RecipeDetails = () => {
     useEffect(() => {
         const fetchRecipe = async () => {
             try {
-                const response = await fetch(`/api/recipes/${id}`);
+                const response = await fetch(`/recipes/${id}`);
                 const data = await response.json();
                 setRecipe(data);
             } catch (err) {

@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Grid, GridItem, Heading, Text} from '@chakra-ui/react';
-import {SearchBar} from './SearchBar';
-
+import {SearchBar} from '../components/SearchBar';
+import {DeleteRecipeButton} from "../components/buttons/DeleteRecipeButton";
+import {EditRecipeButton} from "../components/buttons/EditRecipeButton";
 
 export const RecipesList = () => {
     const [recipes, setRecipes] = useState([]);
@@ -18,23 +19,47 @@ export const RecipesList = () => {
         (recipe.selectedStyle && recipe.selectedStyle.toLowerCase().includes(searchText.toLowerCase()))
     );
 
+    const updateRecipeInDatabase = async (recipeId, updatedRecipe) => {
+        try {
+            const response = await fetch(
+                `http://localhost:5000/beers/${recipeId}`,
+                {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(updatedRecipe),
+                }
+            );
+            if (response.status === 200) {
+                console.log("Przepis został zaktualizowany");
+            } else {
+                console.error("Nie udało się zaktualizować przepisu");
+            }
+        } catch (error) {
+            console.error("Wystąpił błąd podczas aktualizacji przepisu:", error);
+        }
+    };
+
+    const deleteRecipeFromDatabase = async (recipeId) => {
+        try {
+            await fetch(`http://localhost:5000/beers/${recipeId}`, {
+                method: "DELETE",
+            });
+            setRecipes(recipes.filter((recipe) => recipe._id !== recipeId));
+        } catch (error) {
+            console.error("Error deleting recipe:", error);
+        }
+    };
+
     return (
         <Box>
             <Heading as="h2" size="lg" mb="4">
                 Twoje przepisy
             </Heading>
-            <SearchBar searchText={searchText} setSearchText={setSearchText} />
-            <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-                {filteredRecipes.map((recipe) => (
-                    <GridItem key={recipe._id}>
-                        <Heading>
-                            {recipe.name} - {recipe.selectedStyle}
-                        </Heading>
-                    </GridItem>
-                ))}
-            </Grid>
+            <SearchBar searchText={searchText} setSearchText={setSearchText}/>
             <Grid templateColumns="repeat(auto-fill, minmax(300px, 1fr))" gap={6}>
-                {recipes.map((recipe) => (
+                {filteredRecipes.map((recipe) => (
                     <GridItem key={recipe._id} borderWidth={1} borderRadius="lg" p={4}>
                         <Heading as="h3" size="md" mb={3}>
                             {recipe.name} - {recipe.selectedStyle}
@@ -63,9 +88,11 @@ export const RecipesList = () => {
                                 {extra.name}: {extra.amount} g
                             </Text>
                         ))}
+                        <EditRecipeButton recipe={recipe} onUpdate={updateRecipeInDatabase} />
+                        <DeleteRecipeButton recipe={recipe} onDelete={deleteRecipeFromDatabase}/>
                     </GridItem>
                 ))}
             </Grid>
         </Box>
-    );
-};
+    )
+}
