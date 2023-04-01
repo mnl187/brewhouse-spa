@@ -20,7 +20,7 @@ export const ExtrasForm = ({extras, setExtras}) => {
                     index={index + 1}
                 />
             ))}
-            <Button mt={4} mb={4} onClick={() => setExtras([...extras, { name: '', amount: '' }])}>
+            <Button colorScheme="teal" mt={4} mb={4} onClick={() => setExtras([...extras, { name: '', amount: '' }])}>
                 Dodaj dodatki
             </Button>
         </Box>

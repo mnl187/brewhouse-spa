@@ -12,7 +12,7 @@ import {ViewBeerStyles} from "./components/ViewBeerStyles";
 import brewhouseBackground from "./assets/images/brewhouse1.jpg";
 
 const containerStyle = {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${brewhouseBackground})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85)), url(${brewhouseBackground})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",

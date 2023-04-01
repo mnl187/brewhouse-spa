@@ -20,7 +20,7 @@ export const YeastForm = ({yeast, setYeast}) => {
                     index={index + 1}
                 />
             ))}
-            <Button mt={4} mb={4} onClick={() => setYeast([...yeast, { name: '', amount: '' }])}>
+            <Button colorScheme="teal" mt={4} mb={4} onClick={() => setYeast([...yeast, { name: '', amount: '' }])}>
                 Dodaj drożdze
             </Button>
         </Box>
