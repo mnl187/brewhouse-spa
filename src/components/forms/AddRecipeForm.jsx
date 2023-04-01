@@ -47,11 +47,21 @@ export const RecipeForm = ({onSubmit}) => {
                 <FormControl mb="4" id="beerStyle" isRequired>
                     <FormLabel>Styl piwny</FormLabel>
                     <Select
-                        colorScheme="teal"
+                        backgroundColor="gray.700"
+                        variant="filled"
                         w="25vw"
                         placeholder="Wybierz styl piwny"
                         value={selectedStyle}
                         onChange={(e) => setSelectedStyle(e.target.value)}
+                        sx={{
+                            option: {
+                                backgroundColor: "gray.700",
+                                color: "white",
+                                _hover: {
+                                    backgroundColor: "gray.700",
+                                },
+                            },
+                        }}
                     >
                         {beerStyles.map((style) => (
                             <option key={style.name} value={style.name}>

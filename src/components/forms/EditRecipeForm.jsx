@@ -92,13 +92,19 @@ export const EditRecipeForm = ({onUpdate}) => {
                 <FormControl mb="4">
                     <FormLabel htmlFor="selectedStyle">Styl piwny</FormLabel>
                     <Input
+                        backgroundColor="gray.700"
+                        variant="filled"
+                        sx={{
+                            _hover: {
+                                backgroundColor: "gray.700",
+                            },
+                        }}
                         w="25vw"
                         type="text"
                         id="selectedStyle"
                         name="selectedStyle"
                         value={recipe.selectedStyle}
                         isReadOnly
-                        bg="gray.100"
                     />
                 </FormControl>
                 <FormControl mb="4">
