@@ -12,7 +12,7 @@ import {ViewBeerStyles} from "./components/ViewBeerStyles";
 import brewhouseBackground from "./assets/images/brewhouse1.jpg";
 
 const containerStyle = {
-    backgroundImage: `linear-gradient(rgba(225, 225, 225, 0.93), rgba(225, 225, 225, 0.95)), url(${brewhouseBackground})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${brewhouseBackground})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -26,7 +26,7 @@ export const App = () => {
         <ChakraProvider>
             <Router>
                 <Header/>
-                <Box style={containerStyle}>
+                <Box sx={{...containerStyle, color: "white"}}>
                     <Routes>
                         <Route path="/" element={loggedIn ? <Home/> : <Login setLoggedIn={setLoggedIn}/>}/>
                         <Route path="/recipe/:id/edit" element={<EditRecipeForm/>}/>

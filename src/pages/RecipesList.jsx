@@ -60,7 +60,7 @@ export const RecipesList = () => {
             <SearchBar searchText={searchText} setSearchText={setSearchText}/>
             <Grid templateColumns="repeat(4, 1fr)" gap={6}>
                 {filteredRecipes.map((recipe) => (
-                    <GridItem key={recipe._id} borderWidth={1} borderRadius="lg" p={4} bg="gray.300">
+                    <GridItem key={recipe._id} borderWidth={1} borderRadius="lg" p={4} bg="gray.900">
                         <Heading as="h3" size="md" mb={3}>
                             {recipe.name} - {recipe.selectedStyle}
                         </Heading>
