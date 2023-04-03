@@ -1,6 +1,7 @@
 import React from "react";
 import {IngredientForm} from "./IngredientForm";
 import {Box, Button} from "@chakra-ui/react";
+import {PlusSquareIcon} from "@chakra-ui/icons";
 
 export const MaltsForm = ({malts, setMalts}) => {
     return (
@@ -21,6 +22,7 @@ export const MaltsForm = ({malts, setMalts}) => {
                 />
             ))}
                 <Button colorScheme="teal" mt={4} mb={4} onClick={() => setMalts([...malts, { name: '', amount: '' }])}>
+                    <PlusSquareIcon mr={2}/>
                     Dodaj słód
                 </Button>
             </Box>

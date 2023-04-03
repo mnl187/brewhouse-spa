@@ -1,6 +1,7 @@
 import React from "react";
 import {IngredientForm} from "./IngredientForm";
 import {Box, Button} from "@chakra-ui/react";
+import {PlusSquareIcon} from "@chakra-ui/icons";
 
 export const ExtrasForm = ({extras, setExtras}) => {
     return (
@@ -21,6 +22,7 @@ export const ExtrasForm = ({extras, setExtras}) => {
                 />
             ))}
             <Button colorScheme="teal" mt={4} mb={4} onClick={() => setExtras([...extras, { name: '', amount: '' }])}>
+                <PlusSquareIcon mr={2}/>
                 Dodaj dodatki
             </Button>
         </Box>

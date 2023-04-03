@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { Box, Flex, Heading, Button, Text } from '@chakra-ui/react';
+import {PlusSquareIcon, SearchIcon} from "@chakra-ui/icons";
 
 export const Header = () => {
     const Divider = () => (
@@ -34,11 +35,13 @@ export const Header = () => {
                     </Link>
                     <Link to="/add-recipe">
                         <Button ml="4" colorScheme="teal">
+                            <PlusSquareIcon mr={2}/>
                             Dodaj przepis
                         </Button>
                     </Link>
                     <Link to="/view-beer-styles">
                         <Button ml="4" colorScheme="teal">
+                            <SearchIcon mr={2}/>
                             Wyświetl style piwne
                         </Button>
                     </Link>
