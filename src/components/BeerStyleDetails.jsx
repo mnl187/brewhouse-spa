@@ -5,7 +5,11 @@ export const BeerStyleDetails = ({ beerStyles, selectedStyle }) => {
     const selectedBeerStyle = beerStyles.find((style) => style.name === selectedStyle);
 
     if (!selectedBeerStyle) {
-        return null;
+        return (
+            <Box>
+                <Text color="red.500">Brak wybranego stylu piwnego</Text>
+            </Box>
+        );
     }
 
     return (
