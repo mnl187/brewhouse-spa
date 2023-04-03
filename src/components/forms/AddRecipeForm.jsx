@@ -5,6 +5,7 @@ import {MaltsForm} from './MaltsForm';
 import {HopsForm} from './HopsForm';
 import {YeastForm} from './YeastForm';
 import {ExtrasForm} from './ExtrasForm';
+import {BeerStyleDetails} from '../BeerStyleDetails';
 
 export const RecipeForm = ({onSubmit}) => {
 
@@ -43,6 +44,8 @@ export const RecipeForm = ({onSubmit}) => {
             <Heading as="h2" size="lg" mb="4">
                 Dodaj nowy przepis
             </Heading>
+
+
             <form onSubmit={handleSubmit}>
                 <FormControl mb="4" id="beerStyle" isRequired>
                     <FormLabel>Styl piwny</FormLabel>
@@ -60,16 +63,17 @@ export const RecipeForm = ({onSubmit}) => {
                         ))}
                     </Select>
                 </FormControl>
-                <FormControl mb="4" isRequired>
+                <BeerStyleDetails beerStyles={beerStyles} selectedStyle={selectedStyle}/>
+                <FormControl mb="4" pt="4" isRequired>
                     <FormLabel htmlFor="name">Nazwa</FormLabel>
                     <Input w="25vw" type="text" id="name" onChange={(e) => setName(e.target.value)}/>
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel>Składniki</FormLabel>
-                        <MaltsForm malts={malts} setMalts={setMalts}/>
-                        <HopsForm hops={hops} setHops={setHops}/>
-                        <YeastForm yeast={yeast} setYeast={setYeast}/>
-                        <ExtrasForm extras={extras} setExtras={setExtras}/>
+                    <MaltsForm malts={malts} setMalts={setMalts}/>
+                    <HopsForm hops={hops} setHops={setHops}/>
+                    <YeastForm yeast={yeast} setYeast={setYeast}/>
+                    <ExtrasForm extras={extras} setExtras={setExtras}/>
                 </FormControl>
                 <FormControl mb="4">
                     <FormLabel htmlFor="instructions">Sposób przygotowania</FormLabel>
