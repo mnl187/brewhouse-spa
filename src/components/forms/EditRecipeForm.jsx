@@ -84,7 +84,7 @@ export const EditRecipeForm = ({onUpdate}) => {
     };
 
     return (
-        <Box maxW="600px" mx="auto" mt="8">
+        <Box maxW="600px" mx="auto" pt="8">
             <Heading as="h2" size="lg" mb="4">
                 Edytuj przepis
             </Heading>
@@ -136,7 +136,7 @@ export const EditRecipeForm = ({onUpdate}) => {
                     {renderIngredients("extras")}
                 </FormControl>
                 <Button type="submit" colorScheme="teal" mr="4">Zapisz</Button>
-                <Button onClick={() => navigate(-1)}>Anuluj</Button>
+                <Button colorScheme="blue" onClick={() => navigate(-1)}>Anuluj</Button>
             </form>
         </Box>
     );

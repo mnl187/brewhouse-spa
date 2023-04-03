@@ -44,7 +44,7 @@ export const Login = ({setLoggedIn}) => {
                 {error && <Box color="red">{error}</Box>}
 
                 <Button type="submit" colorScheme="teal" mr="4">Zaloguj</Button>
-                <Button type="button" onClick={handleCancel}>Anuluj</Button>
+                <Button type="button" colorScheme="blue" onClick={handleCancel}>Anuluj</Button>
             </form>
         </Box>
         </VStack>
