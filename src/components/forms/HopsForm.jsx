@@ -1,6 +1,7 @@
 import React from "react";
 import {IngredientForm} from "./IngredientForm";
 import {Box, Button} from "@chakra-ui/react";
+import {PlusSquareIcon} from "@chakra-ui/icons";
 
 export const HopsForm = ({hops, setHops}) => {
     return (
@@ -21,6 +22,7 @@ export const HopsForm = ({hops, setHops}) => {
                 />
             ))}
             <Button colorScheme="teal" mt={4} mb={4} onClick={() => setHops([...hops, { name: '', amount: '' }])}>
+                <PlusSquareIcon mr={2}/>
                 Dodaj chmiel
             </Button>
         </Box>

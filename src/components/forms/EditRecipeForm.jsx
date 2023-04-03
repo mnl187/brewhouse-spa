@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {Box, Button, FormControl, FormLabel, Input, Heading} from "@chakra-ui/react";
-import {IngredientInputs} from "../IngredientInputs";
+import {IngredientInputs} from "./IngredientInputs";
+import {CheckIcon, NotAllowedIcon} from "@chakra-ui/icons";
 
 
 
@@ -84,7 +85,7 @@ export const EditRecipeForm = ({onUpdate}) => {
     };
 
     return (
-        <Box maxW="600px" mx="auto" mt="8">
+        <Box maxW="600px" mx="auto" pt="8">
             <Heading as="h2" size="lg" mb="4">
                 Edytuj przepis
             </Heading>
@@ -98,7 +99,7 @@ export const EditRecipeForm = ({onUpdate}) => {
                         name="selectedStyle"
                         value={recipe.selectedStyle}
                         isReadOnly
-                        bg="gray.100"
+                        bg="gray.800"
                     />
                 </FormControl>
                 <FormControl mb="4">
@@ -129,8 +130,19 @@ export const EditRecipeForm = ({onUpdate}) => {
                     <FormLabel htmlFor="extras">Dodatki</FormLabel>
                     {renderIngredients("extras")}
                 </FormControl>
-                <Button type="submit" colorScheme="teal" mr="4">Zapisz</Button>
-                <Button onClick={() => navigate(-1)}>Anuluj</Button>
+                <Button
+                    type="submit"
+                    colorScheme="teal"
+                    mr="4">
+                    <CheckIcon mr={2}/>
+                    Zapisz
+                </Button>
+                <Button
+                    colorScheme="red"
+                    onClick={() => navigate(-1)}>
+                    <NotAllowedIcon mr={2}/>
+                    Anuluj
+                </Button>
             </form>
         </Box>
     );

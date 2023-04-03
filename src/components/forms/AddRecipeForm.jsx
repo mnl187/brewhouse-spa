@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Button, FormControl, FormLabel, Grid, GridItem, Heading, Input, Select} from "@chakra-ui/react";
+import {Box, Button, FormControl, FormLabel, Grid, GridItem, Heading, Input, Select} from "@chakra-ui/react";
 import {useNavigate} from "react-router-dom";
 import {MaltsForm} from './MaltsForm';
 import {HopsForm} from './HopsForm';
 import {YeastForm} from './YeastForm';
 import {ExtrasForm} from './ExtrasForm';
 import {BeerStyleDetails} from '../BeerStyleDetails';
+import {CheckIcon} from "@chakra-ui/icons";
 
 export const RecipeForm = ({onSubmit}) => {
 
@@ -39,8 +40,8 @@ export const RecipeForm = ({onSubmit}) => {
     }, []);
 
     return (
-        <Grid  templateColumns='repeat(4, 1fr)' gap={6}>
-            <GridItem colSpan={1} mx="auto" pt="80" colEnd="auto"justifySelf="end">
+        <Grid templateColumns='repeat(4, 1fr)' gap={6}>
+            <GridItem colSpan={1} mx="auto" pt="8" colEnd="auto"justifySelf="end">
                 <BeerStyleDetails beerStyles={beerStyles} selectedStyle={selectedStyle}/>
             </GridItem>
             <GridItem colSpan={2} mx="auto" pt="8">
@@ -49,18 +50,21 @@ export const RecipeForm = ({onSubmit}) => {
                 </Heading>
                 <form onSubmit={handleSubmit}>
                     <FormControl mb="4" id="beerStyle" isRequired>
-                        <FormLabel>Styl piwny</FormLabel>
+                        <FormLabel>Styl piwa</FormLabel>
                         <Select
                             colorScheme="teal"
                             w="25vw"
-                            placeholder="Wybierz styl piwny"
+                            placeholder="Wybierz styl piwa"
                             value={selectedStyle}
                             onChange={(e) => setSelectedStyle(e.target.value)}
+                            bg="gray.700"
+                            color="white"
+                            _focus={{ borderColor: "teal.500" }}
                         >
                             {beerStyles.map((style) => (
-                                <option key={style.name} value={style.name}>
+                                <Box as="option" key={style.name} value={style.name} bg="gray.800">
                                     {style.name}
-                                </option>
+                                </Box>
                             ))}
                         </Select>
                     </FormControl>
@@ -80,8 +84,12 @@ export const RecipeForm = ({onSubmit}) => {
                         <Input w="25vw" type="text" id="instructions"
                                onChange={(e) => setInstructions(e.target.value)}/>
                     </FormControl>
-                    <Button type="submit" colorScheme="teal" mt="4">
-                        Dodaj przepis
+                    <Button
+                        type="submit"
+                        colorScheme="teal"
+                        mt="8">
+                        <CheckIcon mr={2}/>
+                        Zapisz przepis
                     </Button>
                 </form>
             </GridItem>
