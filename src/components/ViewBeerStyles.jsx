@@ -58,7 +58,7 @@ export const ViewBeerStyles = () => {
                             <Button
                                 mt={4}
                                 colorScheme="teal"
-                                onClick={() => navigateToDetailsPage(style.id)}
+                                onClick={() => navigateToDetailsPage(style.number)}
                             >
                                 Zobacz szczegóły
                             </Button>

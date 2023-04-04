@@ -12,13 +12,20 @@ export const BeerStyleDetailsPage = () => {
             .then((data) => setBeerStyleDetails(data))
     }, [id]);
 
+    if (!beerStyleDetails) {
+        return <Text>Wczytywanie...</Text>;
+    }
+
     return (
         <Box>
             <Heading as="h2" size="lg" mb="4">
-                {beerStyleDetails.name}
+                Nazwa: {beerStyleDetails.name}
             </Heading>
             <Text>
-
+                Numer: {beerStyleDetails.number}
+            </Text>
+            <Text>
+                Kategoria: {beerStyleDetails.category}
             </Text>
         </Box>
     )
