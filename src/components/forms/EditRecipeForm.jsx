@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import {Box, Button, FormControl, FormLabel, Input, Heading} from "@chakra-ui/react";
+import {Box, Button, FormControl, FormLabel, Input, Heading, Flex, Spacer} from "@chakra-ui/react";
 import {IngredientInputs} from "./IngredientInputs";
 import {CheckIcon, NotAllowedIcon} from "@chakra-ui/icons";
-
 
 
 export const EditRecipeForm = ({onUpdate}) => {
@@ -67,13 +66,13 @@ export const EditRecipeForm = ({onUpdate}) => {
     const handleIngredientChange = (index, key, field, value) => {
         setRecipe((prevState) => {
             const ingredients = prevState[key].slice();
-            ingredients[index] = { ...ingredients[index], [field]: value };
-            return { ...prevState, [key]: ingredients };
+            ingredients[index] = {...ingredients[index], [field]: value};
+            return {...prevState, [key]: ingredients};
         });
     };
 
     const renderIngredients = (key) => {
-        return recipe[key].map((ingredient, index) =>  (
+        return recipe[key].map((ingredient, index) => (
             <IngredientInputs
                 key={ingredient._id}
                 ingredient={ingredient}
@@ -85,15 +84,14 @@ export const EditRecipeForm = ({onUpdate}) => {
     };
 
     return (
-        <Box maxW="600px" mx="auto" pt="8">
+        <Box maxW="480px" mx="auto" pt="8">
             <Heading as="h2" size="lg" mb="4">
                 Edytuj przepis
             </Heading>
             <form onSubmit={handleSubmit}>
                 <FormControl mb="4">
-                    <FormLabel htmlFor="selectedStyle">Styl piwny</FormLabel>
+                    <FormLabel htmlFor="selectedStyle">Styl piwa</FormLabel>
                     <Input
-                        backgroundColor="gray.700"
                         variant="filled"
                         sx={{
                             _hover: {
@@ -106,10 +104,7 @@ export const EditRecipeForm = ({onUpdate}) => {
                         name="selectedStyle"
                         value={recipe.selectedStyle}
                         isReadOnly
-<<<<<<< HEAD
-=======
                         bg="gray.800"
->>>>>>> dev
                     />
                 </FormControl>
                 <FormControl mb="4">
@@ -125,25 +120,37 @@ export const EditRecipeForm = ({onUpdate}) => {
                 </FormControl>
                 <FormLabel>Składniki</FormLabel>
                 <FormControl mb="4">
-                    <FormLabel htmlFor="malts">Słód</FormLabel>
+                    <Flex>
+                        <FormLabel htmlFor="malts">Słód</FormLabel>
+                        <Spacer/>
+                        <FormLabel fontSize="sm" fontWeight="bold">Ilość [g]</FormLabel>
+                    </Flex>
                     {renderIngredients("malts")}
                 </FormControl>
                 <FormControl mb="4">
-                    <FormLabel htmlFor="hops">Chmiel</FormLabel>
+                    <Flex>
+                        <FormLabel htmlFor="hops">Chmiel</FormLabel>
+                        <Spacer/>
+                        <FormLabel fontSize="sm" fontWeight="bold">Ilość [g]</FormLabel>
+                    </Flex>
                     {renderIngredients("hops")}
                 </FormControl>
                 <FormControl mb="4">
-                    <FormLabel htmlFor="yeast">Drożdże</FormLabel>
+                    <Flex>
+                        <FormLabel htmlFor="yeast">Drożdże</FormLabel>
+                        <Spacer/>
+                        <FormLabel fontSize="sm" fontWeight="bold">Ilość [g]</FormLabel>
+                    </Flex>
                     {renderIngredients("yeast")}
                 </FormControl>
                 <FormControl mb="4">
-                    <FormLabel htmlFor="extras">Dodatki</FormLabel>
+                    <Flex>
+                        <FormLabel htmlFor="extras">Dodatki</FormLabel>
+                        <Spacer/>
+                        <FormLabel fontSize="sm" fontWeight="bold">Ilość [g]</FormLabel>
+                    </Flex>
                     {renderIngredients("extras")}
                 </FormControl>
-<<<<<<< HEAD
-                <Button type="submit" colorScheme="teal" mr="4">Zapisz</Button>
-                <Button colorScheme="blue" onClick={() => navigate(-1)}>Anuluj</Button>
-=======
                 <Button
                     type="submit"
                     colorScheme="teal"
@@ -157,8 +164,8 @@ export const EditRecipeForm = ({onUpdate}) => {
                     <NotAllowedIcon mr={2}/>
                     Anuluj
                 </Button>
->>>>>>> dev
             </form>
         </Box>
-    );
+    )
+        ;
 }

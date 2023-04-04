@@ -40,45 +40,6 @@ export const RecipeForm = ({onSubmit}) => {
     }, []);
 
     return (
-<<<<<<< HEAD
-        <Box maxW="600px" mx="auto" pt="8">
-            <Heading as="h2" size="lg" mb="4">
-                Dodaj nowy przepis
-            </Heading>
-            <form onSubmit={handleSubmit}>
-                <FormControl mb="4" id="beerStyle" isRequired>
-                    <FormLabel>Styl piwny</FormLabel>
-                    <Select
-                        backgroundColor="gray.700"
-                        variant="filled"
-                        w="25vw"
-                        placeholder="Wybierz styl piwny"
-                        value={selectedStyle}
-                        onChange={(e) => setSelectedStyle(e.target.value)}
-                        sx={{
-                            option: {
-                                backgroundColor: "gray.700",
-                                color: "white",
-                                _hover: {
-                                    backgroundColor: "gray.700",
-                                },
-                            },
-                        }}
-                    >
-                        {beerStyles.map((style) => (
-                            <option key={style.name} value={style.name}>
-                                {style.name}
-                            </option>
-                        ))}
-                    </Select>
-                </FormControl>
-                <FormControl mb="4" isRequired>
-                    <FormLabel htmlFor="name">Nazwa</FormLabel>
-                    <Input w="25vw" type="text" id="name" onChange={(e) => setName(e.target.value)}/>
-                </FormControl>
-                <FormControl mb="4">
-                    <FormLabel>Składniki</FormLabel>
-=======
         <Grid templateColumns='repeat(4, 1fr)' gap={6}>
             <GridItem colSpan={1} mx="auto" pt="8" colEnd="auto"justifySelf="end">
                 <BeerStyleDetails beerStyles={beerStyles} selectedStyle={selectedStyle}/>
@@ -101,7 +62,10 @@ export const RecipeForm = ({onSubmit}) => {
                             _focus={{ borderColor: "teal.500" }}
                         >
                             {beerStyles.map((style) => (
-                                <Box as="option" key={style.name} value={style.name} bg="gray.800">
+                                <Box as="option"
+                                     key={style.name}
+                                     value={style.name}
+                                     bg="gray.800">
                                     {style.name}
                                 </Box>
                             ))}
@@ -113,7 +77,6 @@ export const RecipeForm = ({onSubmit}) => {
                     </FormControl>
                     <FormControl mb="4">
                         <FormLabel>Składniki</FormLabel>
->>>>>>> dev
                         <MaltsForm malts={malts} setMalts={setMalts}/>
                         <HopsForm hops={hops} setHops={setHops}/>
                         <YeastForm yeast={yeast} setYeast={setYeast}/>

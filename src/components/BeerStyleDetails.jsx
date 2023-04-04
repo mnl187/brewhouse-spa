@@ -1,32 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import { Box, VStack, Text } from '@chakra-ui/react';
-
-export const BeerStyleDetails = ({ beerStyles, selectedStyle }) => {
-    const selectedBeerStyle = beerStyles.find((style) => style.name === selectedStyle);
-
-    if (!selectedBeerStyle) {
-        return null;
-    }
-
-    return (
-        <VStack spacing={2} alignItems="flex-start">
-            <Box>
-                <Text as="span" fontWeight="bold">Słód:</Text>
-                <Text as="span"> OGmin: {selectedBeerStyle.ogmin},</Text>
-                <Text as="span"> OGmax: {selectedBeerStyle.ogmax},</Text>
-                <Text as="span"> SRMmin: {selectedBeerStyle.srmmin},</Text>
-                <Text as="span"> SRMmax: {selectedBeerStyle.srmmax}</Text>
-            </Box>
-            <Box>
-                <Text as="span" fontWeight="bold">Chmiel:</Text>
-                <Text as="span"> IBUmin: {selectedBeerStyle.ibumin},</Text>
-                <Text as="span"> IBUmax: {selectedBeerStyle.ibumax}</Text>
-            </Box>
-        </VStack>
-    );
-};
-=======
 import {Box, VStack, Text, Heading} from '@chakra-ui/react';
 
 export const BeerStyleDetails = ({beerStyles, selectedStyle}) => {
@@ -48,19 +20,22 @@ export const BeerStyleDetails = ({beerStyles, selectedStyle}) => {
             <Box borderWidth={1} borderRadius="lg" p={4} spacing={2} minW="400px">
                 <Box>
                     <Text as="span" fontWeight="bold">Słód:</Text>
-                    <Text as="span"> OG: {selectedBeerStyle.ogmin} - {selectedBeerStyle.ogmax},</Text>
+                    <br/>
+                    <Text as="span"> OG: {selectedBeerStyle.ogmin} - {selectedBeerStyle.ogmax}, </Text>
+                    <Text as="span"> FG: {selectedBeerStyle.fgmin} - {selectedBeerStyle.fgmax}, </Text>
                     <Text as="span"> Barwa: {selectedBeerStyle.srmmin} - {selectedBeerStyle.srmmax}</Text>
                 </Box>
                 <Box>
                     <Text as="span" fontWeight="bold">Chmiel:</Text>
+                    <br/>
                     <Text as="span"> IBU: {selectedBeerStyle.ibumin} - {selectedBeerStyle.ibumax}</Text>
                 </Box>
                 <Box>
                     <Text as="span" fontWeight="bold">Alkohol:</Text>
+                    <br/>
                     <Text as="span"> ABV: {selectedBeerStyle.abvmin}% - {selectedBeerStyle.abvmax}%</Text>
                 </Box>
             </Box>
         </VStack>
     );
 };
->>>>>>> dev
