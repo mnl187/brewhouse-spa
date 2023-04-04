@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Input} from "@chakra-ui/react";
+import {Heading, Input} from "@chakra-ui/react";
 import {Grid, GridItem, Text} from '@chakra-ui/react';
 
 export const ViewBeerStyles = () => {
@@ -30,14 +30,18 @@ export const ViewBeerStyles = () => {
                 mb={4}
 
             />
-                <Grid  templateColumns="repeat(auto-fill, minmax(250px, 1fr))" gap={6}>
+                <Grid  templateColumns="repeat(auto-fill, minmax(350px, 1fr))" gap={6}>
                     {filteredBeerStyles.map((style) => (
                         <GridItem key={style.name} p={4} borderWidth={1} borderRadius="lg">
                             <Text>
-                                Nazwa stylu piwnego: <strong>{style.name}</strong>
+                                Nazwa stylu piwnego: <br/>
+                                <Heading as="h4" size="md">
+                                    <strong>{style.name}</strong>
+                                </Heading>
                             </Text>
                             <Text>
-                                Kategoria: <strong>{style.category}</strong>
+                                Kategoria: <br/>
+                                <strong>{style.category}</strong>
                             </Text>
                         </GridItem>
                     ))}

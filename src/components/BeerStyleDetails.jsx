@@ -14,7 +14,7 @@ export const BeerStyleDetails = ({beerStyles, selectedStyle}) => {
 
     return (
         <VStack alignItems="flex-start">
-            <Heading as="h" size="md" mb="2">
+            <Heading as="h2" size="md" mb="2">
                 Parametry stylu
             </Heading>
             <Box borderWidth={1} borderRadius="lg" p={4} spacing={2} minW="400px">
