@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from "react";
-import {Heading, Input} from "@chakra-ui/react";
-import {Grid, GridItem, Text} from '@chakra-ui/react';
+import {Box, Heading, Input} from "@chakra-ui/react";
+import {Grid, GridItem, Text, Button} from '@chakra-ui/react';
+import {useNavigate} from 'react-router-dom'
 
 export const ViewBeerStyles = () => {
 
     const [beerStyles, setBeerStyles] = useState([]);
-    const [searchTerm, setSearchTerm] = useState("")
+    const [searchTerm, setSearchTerm] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:5000/beer-styles')
@@ -21,6 +23,10 @@ export const ViewBeerStyles = () => {
         style.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    const navigateToDetailsPage = (id) => {
+        navigate(`/beer-styles/${id}`);
+    };
+
     return (
         <div>
             <Input
@@ -28,21 +34,34 @@ export const ViewBeerStyles = () => {
                 value={searchTerm}
                 onChange={handleSearch}
                 mb={4}
-
             />
-                <Grid  templateColumns="repeat(auto-fill, minmax(350px, 1fr))" gap={6}>
+                <Grid
+                    templateColumns="repeat(auto-fill, minmax(350px, 1fr))"
+                    gap={6}>
                     {filteredBeerStyles.map((style) => (
-                        <GridItem key={style.name} p={4} borderWidth={1} borderRadius="lg">
-                            <Text>
+                        <GridItem
+                            key={style.name}
+                            p={4} borderWidth={1}
+                            borderRadius="lg">
+                            <Box>
                                 Nazwa stylu piwnego: <br/>
-                                <Heading as="h4" size="md">
+                                <Heading
+                                    as="h4"
+                                    size="md">
                                     <strong>{style.name}</strong>
                                 </Heading>
-                            </Text>
+                            </Box>
                             <Text>
                                 Kategoria: <br/>
                                 <strong>{style.category}</strong>
                             </Text>
+                            <Button
+                                mt={4}
+                                colorScheme="teal"
+                                onClick={() => navigateToDetailsPage(style.id)}
+                            >
+                                Zobacz szczegóły
+                            </Button>
                         </GridItem>
                     ))}
                 </Grid>

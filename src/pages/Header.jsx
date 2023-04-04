@@ -45,7 +45,6 @@ export const Header = () => {
                             Wyświetl style piwne
                         </Button>
                     </Link>
-
                 </Box>
             </Flex>
         </Box>

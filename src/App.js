@@ -34,7 +34,7 @@ export const App = () => {
                         <Route path="/recipe/:id/delete" element={<DeleteRecipeButton/>}/>
                         <Route path="/add-recipe" element={<AddRecipe/>}/>
                         <Route path="/view-beer-styles" element={<ViewBeerStyles/>}/>
-                        <Route path="/view-beer-styles/:id" element={<BeerStyleDetailsPage />} />
+                        <Route path="/beer-styles/:id" element={<BeerStyleDetailsPage />} />
                         <Route path="*" element={<NotFound/>}/>
                     </Routes>
                 </Box>
