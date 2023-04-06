@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {VStack, Haeding, FormControl, Input, FormLabel, Box, Heading} from "@chakra-ui/react";
+import {VStack, FormControl, Input, FormLabel, Box, Heading, Button} from "@chakra-ui/react";
 
 export const Register = () => {
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ export const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch("/auth/register", {
+        const response = await fetch("http://localhost:5000/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -28,6 +28,11 @@ export const Register = () => {
         }
     };
 
+    const handleCancel = () => {
+        setUsername("");
+        setPassword("");
+        setError(null);
+    };
 
     return (
         <VStack>
@@ -55,10 +60,16 @@ export const Register = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
-
-                        {error && <Box color="red">{error}</Box>}
-
                     </FormControl>
+
+                    {error && <Box color="red">{error}</Box>}
+
+                    <Button type="submit" colorScheme="teal" mr="4">
+                        Zarejestruj
+                    </Button>
+                    <Button type="button" colorScheme="blue" onClick={handleCancel}>
+                        Anuluj
+                    </Button>
                 </form>
             </Box>
         </VStack>
