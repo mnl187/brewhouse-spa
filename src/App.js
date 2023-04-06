@@ -11,6 +11,7 @@ import {useState} from "react";
 import {ViewBeerStyles} from "./components/ViewBeerStyles";
 import brewhouseBackground from "./assets/images/brewhouse1.jpg";
 import {BeerStyleDetailsPage} from "./pages/BeerStyleDetailsPage";
+import {Register} from "./pages/Register";
 
 const containerStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85)), url(${brewhouseBackground})`,
@@ -30,6 +31,7 @@ export const App = () => {
                 <Box sx={{...containerStyle, color: "white"}}>
                     <Routes>
                         <Route path="/" element={loggedIn ? <Home/> : <Login setLoggedIn={setLoggedIn}/>}/>
+                        <Route path="/register" element={<Register />}/>
                         <Route path="/recipe/:id/edit" element={<EditRecipeForm/>}/>
                         <Route path="/recipe/:id/delete" element={<DeleteRecipeButton/>}/>
                         <Route path="/add-recipe" element={<AddRecipe/>}/>
