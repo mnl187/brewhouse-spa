@@ -36,6 +36,7 @@ export const Login = ({setLoggedIn}) => {
         e.preventDefault();
 
        const user = await login(username, password)
+
     };
 
     const handleCancel = () => {
