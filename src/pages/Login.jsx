@@ -18,20 +18,24 @@ export const Login = ({setLoggedIn}) => {
                 body: JSON.stringify({username, password})
             });
 
+            const data = await response.json();
 
+            if (response.ok) {
+                setLoggedIn(true);
+                localStorage.setItem('token', data.user.token);
+                navigate('/');
+            } else {
+                setError(data.message)
+            }
+        } catch (error) {
+            setError('Wystąpił błąd podczas logowania');
         }
-    }
+    };
 
-
-    const handeSubmit = (e) => {
+    const handeSubmit = async (e) => {
         e.preventDefault();
 
-        if (username === 'username' && password === 'password') {
-            setLoggedIn(true);
-            navigate("/");
-        } else {
-            setError('Niepoprawny email lub hasło');
-        }
+       const user = await login(username, password)
     };
 
     const handleCancel = () => {
