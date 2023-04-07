@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
 import {Home} from "./pages/Home";
 import {Box, ChakraProvider} from "@chakra-ui/react";
 import {Header} from "./pages/Header";
@@ -12,6 +12,7 @@ import {ViewBeerStyles} from "./components/ViewBeerStyles";
 import brewhouseBackground from "./assets/images/brewhouse1.jpg";
 import {BeerStyleDetailsPage} from "./pages/BeerStyleDetailsPage";
 import {Register} from "./pages/Register";
+import {Auth} from "./components/buttons/Auth";
 
 const containerStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85)), url(${brewhouseBackground})`,
@@ -30,13 +31,16 @@ export const App = () => {
                 <Header/>
                 <Box sx={{...containerStyle, color: "white"}}>
                     <Routes>
-                        <Route path="/" element={loggedIn ? <Home/> : <Login setLoggedIn={setLoggedIn}/>}/>
-                        <Route path="/register" element={<Register />}/>
+                        <Route path="/auth" element={<Auth/>}>
+                            <Route index element={<Login />} path="login" />
+                            <Route element={<Register/>} path="register" />
+                        </Route>
+                        <Route path="/" element={<Home/>} />
                         <Route path="/recipe/:id/edit" element={<EditRecipeForm/>}/>
                         <Route path="/recipe/:id/delete" element={<DeleteRecipeButton/>}/>
                         <Route path="/add-recipe" element={<AddRecipe/>}/>
                         <Route path="/view-beer-styles" element={<ViewBeerStyles/>}/>
-                        <Route path="/beer-styles/:id" element={<BeerStyleDetailsPage />} />
+                        <Route path="/beer-styles/:id" element={<BeerStyleDetailsPage/>}/>
                         <Route path="*" element={<NotFound/>}/>
                     </Routes>
                 </Box>

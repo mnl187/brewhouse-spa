@@ -22,7 +22,7 @@ export const Register = () => {
 
         if (response.ok) {
             setError("Rejestracja zakończona pomyślnie, zaloguj się.");
-            navigate("/login");
+            navigate("/auth/register");
         } else {
             setError(data.message);
         }

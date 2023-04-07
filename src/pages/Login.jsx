@@ -23,7 +23,7 @@ export const Login = ({setLoggedIn}) => {
             if (response.ok) {
                 setLoggedIn(true);
                 localStorage.setItem('token', data.user.token);
-                navigate('/');
+                navigate('/auth/register');
             } else {
                 setError(data.message)
             }
