@@ -12,11 +12,11 @@ Frontend
 
 
  Backend
-
-  ![](https://img.shields.io/github/languages/top/mnl187/brewhouse-server)
-  ![](https://img.shields.io/github/commit-status/mnl187/brewhouse-server/main/87c50fe)
-  ![](https://img.shields.io/github/last-commit/mnl187/brewhouse-server)
-  ![](https://img.shields.io/github/commit-activity/m/mnl187/brewhouse-server)
+    
+ ![](https://img.shields.io/github/languages/top/mnl187/brewhouse-server)
+ ![](https://img.shields.io/github/commit-status/mnl187/brewhouse-server/main/87c50fe)
+ ![](https://img.shields.io/github/last-commit/mnl187/brewhouse-server)
+ ![](https://img.shields.io/github/commit-activity/m/mnl187/brewhouse-server)
 
 ## Opis
 
@@ -101,4 +101,4 @@ Alikacja frontendowa znajduje się pod [linkiem](https://github.com/mnl187/brewh
 
 Ten projekt jest objęty licencją MIT. Więcej informacji można znaleźć w pliku [LICENSE](LICENSE).
 
-[![@TODO](https://img.shields.io/badge/License-MIT-green.svg)]()
+Obraz tła pochodzi ze strony [unsplash.com](https://unsplash.com/photos/sVothhm7iRI).
