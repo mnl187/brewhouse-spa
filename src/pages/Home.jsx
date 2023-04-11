@@ -7,7 +7,7 @@ export const Home = () => {
         <Stack spacing={4} align="center">
             <RecipesList />
             <Link to="/add-recipe">
-                <Button>Dodaj przepis</Button>
+                <Button colorScheme="teal" mr="4">Dodaj przepis</Button>
             </Link>
         </Stack>
     );
