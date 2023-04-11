@@ -11,7 +11,7 @@ export const Auth = () => {
 
     return (
         <VStack>
-            <Box>
+            <Box pt="8">
                 <Button onClick={() => handleClick("/auth/login")} colorScheme="blue" mr="4">
                     Logowanie
                 </Button>
