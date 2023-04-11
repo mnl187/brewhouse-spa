@@ -23,11 +23,12 @@ export const Login = ({setLoggedIn}) => {
             if (response.ok) {
                 setLoggedIn(true);
                 localStorage.setItem('token', data.user.token);
-                navigate('/auth/register');
+                navigate('/');
             } else {
                 setError(data.message)
             }
         } catch (error) {
+            console.error(error);
             setError('Wystąpił błąd podczas logowania');
         }
     };

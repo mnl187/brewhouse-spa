@@ -33,11 +33,11 @@ export const App = () => {
                 <Box sx={{...containerStyle, color: "white"}}>
                     <Routes>
                         <Route path="/auth" element={<Auth/>}>
-                            <Route index element={<Login setIsLoggedIn={setLoggedIn}/>} path="login"/>
+                            <Route index element={<Login setLoggedIn={setLoggedIn}/>} path="login"/>
                             <Route element={<Register/>} path="register"/>
                         </Route>
-                        <Route path="/" element={<AuthWrapper isLoggedIn={loggedIn}/>}>
-                            <Route loggedIn={loggedIn} path="/" element={<Home/>}/>
+                        <Route path="/" element={<AuthWrapper loggedIn={loggedIn}/>}>
+                            <Route path="/" element={<Home/>}/>
                             <Route path="/recipe/:id/edit" element={<EditRecipeForm/>}/>
                             <Route path="/recipe/:id/delete" element={<DeleteRecipeButton/>}/>
                             <Route path="/add-recipe" element={<AddRecipe/>}/>
