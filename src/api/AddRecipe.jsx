@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@chakra-ui/react';
-import { RecipeForm } from './forms/AddRecipeForm';
+import { RecipeForm } from '../components/forms/AddRecipeForm';
 
 export const AddRecipe = ({ addRecipe }) => {
     const handleSubmit = async (recipe) => {

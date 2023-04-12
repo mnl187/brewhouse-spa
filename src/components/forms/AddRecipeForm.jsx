@@ -52,6 +52,7 @@ export const RecipeForm = ({onSubmit}) => {
                     <FormControl mb="4" id="beerStyle" isRequired>
                         <FormLabel>Styl piwa</FormLabel>
                         <Select
+                            variant="filled"
                             colorScheme="teal"
                             w="25vw"
                             placeholder="Wybierz styl piwa"

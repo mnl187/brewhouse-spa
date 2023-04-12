@@ -3,7 +3,7 @@ import {Home} from "./pages/Home";
 import {Box, ChakraProvider} from "@chakra-ui/react";
 import {Header} from "./pages/Header";
 import {NotFound} from "./pages/NotFound";
-import {AddRecipe} from "./components/AddRecipe";
+import {AddRecipe} from "./api/AddRecipe";
 import {EditRecipeForm} from "./components/forms/EditRecipeForm";
 import {DeleteRecipeButton} from "./components/buttons/DeleteRecipeButton";
 import {Login} from "./pages/Login";

@@ -31,7 +31,14 @@ export const Header = () => {
                 </Heading>
                 <Box>
                     <Link to="/">
-                        <Button variant="outline">Strona główna</Button>
+                        <Button
+                            variant="outline"
+                            _hover={{
+                                color: "teal",
+                                bg: "gray.800",
+                                borderColor: "gray.200"
+                            }}
+                        >Strona główna</Button>
                     </Link>
                     <Link to="/add-recipe">
                         <Button ml="4" colorScheme="teal">
