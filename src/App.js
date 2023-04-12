@@ -8,7 +8,7 @@ import {EditRecipeForm} from "./components/forms/EditRecipeForm";
 import {DeleteRecipeButton} from "./components/buttons/DeleteRecipeButton";
 import {Login} from "./pages/Login";
 import React, {useState} from "react";
-import {ViewBeerStyles} from "./components/ViewBeerStyles";
+import {ViewBeerStyles} from "./pages/ViewBeerStyles";
 import brewhouseBackground from "./assets/images/brewhouse1.jpg";
 import {BeerStyleDetailsPage} from "./pages/BeerStyleDetailsPage";
 import {Register} from "./pages/Register";

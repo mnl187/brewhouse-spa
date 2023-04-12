@@ -5,7 +5,7 @@ import {MaltsForm} from './MaltsForm';
 import {HopsForm} from './HopsForm';
 import {YeastForm} from './YeastForm';
 import {ExtrasForm} from './ExtrasForm';
-import {BeerStyleDetails} from '../BeerStyleDetails';
+import {BeerStyleDetails} from '../../pages/BeerStyleDetails';
 import {CheckIcon} from "@chakra-ui/icons";
 
 export const RecipeForm = ({onSubmit}) => {
