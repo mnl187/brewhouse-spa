@@ -104,11 +104,11 @@ Ten projekt jest objęty licencją MIT. Więcej informacji można znaleźć w pl
 Obraz tła pochodzi ze strony [unsplash.com](https://unsplash.com/photos/sVothhm7iRI).
 
 
-  <summary>Screens</summary>
+<summary>Screens</summary>
 <details>
-  <img src="https://1drv.ms/i/s!Ajg1fZ1MHwD0vr9AgHQoE0HWEiOBhg?e=4ZriJP" width="300px" alt="login page">
-  <img src="https://1drv.ms/i/s!Ajg1fZ1MHwD0vr89ckZKX3gy9_hEMw?e=83DnmL" width="300px" alt="home page">
-  <img src="https://1drv.ms/i/s!Ajg1fZ1MHwD0vr8-PdkHcmoH_FNIvg?e=UhQCns" width="300px" alt="add recipe page">
-  <img src="https://1drv.ms/i/s!Ajg1fZ1MHwD0vr81zm3dooc82q8tiQ?e=3E0VRZ" width="300px" alt="edit recipe page">
-  <img src="https://1drv.ms/i/s!Ajg1fZ1MHwD0vr9DVi6WBDM75fe-7A?e=jC6HtN" width="300px" alt="beer styles page">
+<a href="https://freeimage.host/i/Hky4f5B"><img src="https://iili.io/Hky4f5B.md.png" alt="login page" width="199"></a>
+  <a href="https://freeimage.host/i/Hky4EqG"><img src="https://iili.io/Hky4EqG.md.png" alt="home page" width="199"></a>
+ <a href="https://freeimage.host/i/Hky4p7p"><img src="https://iili.io/Hky4p7p.md.png" alt="add recipe page" width="199"></a>
+  <a href="https://freeimage.host/i/Hky62Qn"><img src="https://iili.io/Hky62Qn.md.png" alt="edit recipe page" width="0"></a>
+  <a href="https://freeimage.host/i/Hky6KEG"><img src="https://iili.io/Hky6KEG.md.png" alt="view beer styles page" width="199"></a>
 </details>
