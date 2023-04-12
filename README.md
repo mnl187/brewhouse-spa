@@ -109,6 +109,6 @@ Obraz tła pochodzi ze strony [unsplash.com](https://unsplash.com/photos/sVothhm
 <a href="https://freeimage.host/i/Hky4f5B"><img src="https://iili.io/Hky4f5B.md.png" alt="login page" width="199"></a>
   <a href="https://freeimage.host/i/Hky4EqG"><img src="https://iili.io/Hky4EqG.md.png" alt="home page" width="199"></a>
  <a href="https://freeimage.host/i/Hky4p7p"><img src="https://iili.io/Hky4p7p.md.png" alt="add recipe page" width="199"></a>
-  <a href="https://freeimage.host/i/Hky62Qn"><img src="https://iili.io/Hky62Qn.md.png" alt="edit recipe page" width="0"></a>
+  <a href="https://freeimage.host/i/Hky62Qn"><img src="https://iili.io/Hky62Qn.md.png" alt="edit recipe page" width="199"></a>
   <a href="https://freeimage.host/i/Hky6KEG"><img src="https://iili.io/Hky6KEG.md.png" alt="view beer styles page" width="199"></a>
 </details>
