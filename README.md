@@ -102,3 +102,13 @@ Alikacja frontendowa znajduje się pod [linkiem](https://github.com/mnl187/brewh
 Ten projekt jest objęty licencją MIT. Więcej informacji można znaleźć w pliku [LICENSE](LICENSE).
 
 Obraz tła pochodzi ze strony [unsplash.com](https://unsplash.com/photos/sVothhm7iRI).
+
+
+  <summary>Screens</summary>
+<details>
+  <img src="https://1drv.ms/i/s!Ajg1fZ1MHwD0vr9AgHQoE0HWEiOBhg?e=4ZriJP" width="300px" alt="login page">
+  <img src="https://1drv.ms/i/s!Ajg1fZ1MHwD0vr89ckZKX3gy9_hEMw?e=83DnmL" width="300px" alt="home page">
+  <img src="https://1drv.ms/i/s!Ajg1fZ1MHwD0vr8-PdkHcmoH_FNIvg?e=UhQCns" width="300px" alt="add recipe page">
+  <img src="https://1drv.ms/i/s!Ajg1fZ1MHwD0vr81zm3dooc82q8tiQ?e=3E0VRZ" width="300px" alt="edit recipe page">
+  <img src="https://1drv.ms/i/s!Ajg1fZ1MHwD0vr9DVi6WBDM75fe-7A?e=jC6HtN" width="300px" alt="beer styles page">
+</details>
